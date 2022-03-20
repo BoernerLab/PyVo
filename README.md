@@ -21,5 +21,5 @@ git clone https://github.com/BoernerLab/PyVo.git
 ```
 <br>
 
-Eine Installationsanleitung und Informationen zur Verwendung finden Sie unter [boernerlab.github.io/pyvo](boernerlab.github.io/pyvo).
+Eine Installationsanleitung und Informationen zur Verwendung finden Sie unter [https://boernerlab.github.io/PyVo/](https://boernerlab.github.io/PyVo/).
 
