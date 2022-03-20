@@ -1,0 +1,10 @@
+# in _config.yml
+title: "Python in der Vorlesung"
+author: Felix Erichson / Lynn Reuss / Richard Börner
+logo: PyVo_Logo.png
+copyright: "2022 / CC BY-NC-SA"  # Copyright year to be placed in the footer
+execute:
+  execute_notebooks: "off"
+html:
+    favicon : "Abbildungen/favicon.ico"
+

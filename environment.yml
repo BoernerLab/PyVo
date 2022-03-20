@@ -1,0 +1,12 @@
+name: PyVo
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - numpy
+  - matplotlib
+  - pandas
+  - ipywidgets
+  - jupyterlab
+  - ipykernel

@@ -1,0 +1,19 @@
+format: jb-book
+root: index_page
+parts:
+    - caption: Grundlagen
+      chapters:
+      - file: content/Grundlagen/installation
+      - file: content/Grundlagen/notebook_grundlagen
+    - caption: Aufgaben
+      chapters:
+      - file: content/Mechanik/Mechanik_Preaambel
+        sections:
+        - file: content/Mechanik/Notebooks/Geschwindigkeit
+        - file: content/Mechanik/Notebooks/Wurfbewegung
+        - file: content/Mechanik/Notebooks/Ampel
+        - file: content/Mechanik/Notebooks/Looping
+        - file: content/Mechanik/Notebooks/Schiefe_Ebene
+        
+        
+        
