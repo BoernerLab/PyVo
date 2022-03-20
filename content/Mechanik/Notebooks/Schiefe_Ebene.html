@@ -1,0 +1,923 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schiefe Ebene &#8212; Python in der Vorlesung</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="Looping" href="Looping.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      <img src="../../../_static/PyVo_Logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python in der Vorlesung</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../index_page.html">
+   Einleitung
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Grundlagen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Grundlagen/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Grundlagen/notebook_grundlagen.html">
+   Jupyter Notebooks
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Aufgaben
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../Mechanik_Preaambel.html">
+   Themengebiet Mechanik
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Geschwindigkeit.html">
+     Einführung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Wurfbewegung.html">
+     Wurfbewegung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ampel.html">
+     Ampel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Looping.html">
+     Looping
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Schiefe Ebene
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/Mechanik/Notebooks/Schiefe_Ebene.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/Mechanik/Notebooks/Schiefe_Ebene.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabestellung">
+   Aufgabestellung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gegeben">
+   Gegeben
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gesucht">
+   Gesucht
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skizze">
+   Skizze
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#physikalischer-losungsweg">
+   Physikalischer Lösungsweg
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implemetierung-in-python">
+   Implemetierung in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionsaufrufe">
+   Funktionsaufrufe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphische-darstellung-der-physikalischen-losung">
+   Graphische Darstellung der physikalischen Lösung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphische-darstellung-unter-variation-der-anfangsbedingung">
+   Graphische Darstellung unter Variation der Anfangsbedingung
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="schiefe-ebene">
+<h1>Schiefe Ebene<a class="headerlink" href="#schiefe-ebene" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="aufgabestellung">
+<h2>Aufgabestellung<a class="headerlink" href="#aufgabestellung" title="Permalink to this headline">¶</a></h2>
+<p>Ein Fahrzeug der Masse <span class="math notranslate nohighlight">\(m = 0,5~kg\)</span> fährt eine geneigte Ebene hinab. Berechnen Sie den Weg <span class="math notranslate nohighlight">\(s\)</span>, die Geschwindigkeit <span class="math notranslate nohighlight">\(v\)</span> und die Beschleunigung <span class="math notranslate nohighlight">\(a\)</span>, wenn der Winkel <span class="math notranslate nohighlight">\(\alpha = 40°\)</span> und <span class="math notranslate nohighlight">\(\mu = 0.03\)</span> betragen.</p>
+</div>
+<div class="section" id="gegeben">
+<h2>Gegeben<a class="headerlink" href="#gegeben" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m = 0.5~kg\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha = 40°\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu = 0.03\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="gesucht">
+<h2>Gesucht<a class="headerlink" href="#gesucht" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Beschleunigung <span class="math notranslate nohighlight">\(a\)</span></p></li>
+<li><p>Weg <span class="math notranslate nohighlight">\(s\)</span></p></li>
+<li><p>Geschwindigkeit <span class="math notranslate nohighlight">\(v\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="skizze">
+<h2>Skizze<a class="headerlink" href="#skizze" title="Permalink to this headline">¶</a></h2>
+<p><img alt="title" src="../../../_images/Skizze_geneigte_eben.png" /></p>
+</div>
+<div class="section" id="physikalischer-losungsweg">
+<h2>Physikalischer Lösungsweg<a class="headerlink" href="#physikalischer-losungsweg" title="Permalink to this headline">¶</a></h2>
+<p>Im Folgenden werden die Formeln zur Berechnung des Wegs <span class="math notranslate nohighlight">\(s\)</span>, der Geschwindigkeit <span class="math notranslate nohighlight">\(v\)</span> und der Beschleunigung <span class="math notranslate nohighlight">\(a\)</span> benötigt:<br />
+<span class="math notranslate nohighlight">\(s = 0,5 \cdot a \cdot t^2 + v_0 \cdot t + s_0\)</span></p>
+<p><span class="math notranslate nohighlight">\(v = a \cdot t + v_0\)</span></p>
+<p>Da die Beschleunigung unbekannt ist, ergibt sich die Berechnung von <span class="math notranslate nohighlight">\(a\)</span> aus dem Kraftansatz:<br />
+<span class="math notranslate nohighlight">\(\text{Kraftansatz}_{\text{Trägheit}}\)</span> = <span class="math notranslate nohighlight">\(\sum \text{äußere Kräfte}\)</span></p>
+<p>Die Beschleunigung <span class="math notranslate nohighlight">\(a\)</span> wird demnach anhand gegebener Größen wie folgt berechnet:</p>
+<p><span class="math notranslate nohighlight">\(a = \frac{F_H - F_R}{m} = \frac{(m \cdot g \cdot \sin \alpha) - (\mu \cdot m \cdot g \cdot \cos \alpha)}{m}\)</span></p>
+<p>Berechnung <span class="math notranslate nohighlight">\(a\)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a = \frac{(0,5 \cdot 9,81 \cdot \sin(40°)) - (0,03 \cdot 0,5 \cdot 9,81 \cdot \cos(40°))}{0,5} = \frac{3,15 - 0,11}{0,5} = 6,08~\frac{m}{s²}\)</span></p></li>
+</ul>
+<p>Einheitengleichung:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\([a] = \frac{([m] \cdot [g] \cdot \sin \alpha) - ([\mu] \cdot [m] \cdot [g] \cdot \cos \alpha)}{[m]} = \frac{kg \cdot m  - kg \cdot m}{kg \cdot s²} = \frac{m}{s²}\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="implemetierung-in-python">
+<h2>Implemetierung in Python<a class="headerlink" href="#implemetierung-in-python" title="Permalink to this headline">¶</a></h2>
+<p>Als ersten werden die benötigten Bibliotheken importiert:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mcolors</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Im Folgenden soll dargestellt werden, wie man einen Vektor mit unterschiedlichen Schritten erstellt. Als Beispiel sollen hier 10 Sekunden in 0,5 Sekundenschritten simuliert werden:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erstellen des Vektors</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="c1"># Ausgabe des Vektors</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.   0.5  1.   1.5  2.   2.5  3.   3.5  4.   4.5  5.   5.5  6.   6.5
+  7.   7.5  8.   8.5  9.   9.5 10. ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die folgenden Funktionen berechnen den zurückgelegten Weg <span class="math notranslate nohighlight">\(s\)</span>, die Beschleunigung <span class="math notranslate nohighlight">\(a\)</span> bzw. die Geschwindigkeit <span class="math notranslate nohighlight">\(v\)</span> in Abhängigkeit der Zeit <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Funktion zur Berechnung von a</span>
+<span class="k">def</span> <span class="nf">calculate_acceleration</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">mueh</span><span class="p">):</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="mf">9.80665</span> <span class="c1"># m/s^2</span>
+    <span class="n">FG</span> <span class="o">=</span> <span class="n">m</span><span class="o">*</span><span class="n">g</span>
+    <span class="n">FH</span> <span class="o">=</span> <span class="n">FG</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span>
+    <span class="n">FN</span> <span class="o">=</span> <span class="n">FG</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span>
+    <span class="n">FR</span> <span class="o">=</span> <span class="n">mueh</span> <span class="o">*</span> <span class="n">FN</span>
+
+    <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">FH</span> <span class="o">-</span> <span class="n">FR</span><span class="p">)</span><span class="o">/</span><span class="n">m</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="c1"># Funktion zur Berechnung von s</span>
+<span class="k">def</span> <span class="nf">calculate_distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">s0</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="p">((</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">v0</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="o">+</span> <span class="n">s0</span>
+    <span class="k">return</span> <span class="n">s</span>
+
+<span class="c1"># Funktion zur Berechnung von v</span>
+<span class="k">def</span> <span class="nf">calculate_velocity</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">v0</span><span class="p">):</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">v0</span>
+    <span class="k">return</span> <span class="n">v</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="funktionsaufrufe">
+<h2>Funktionsaufrufe<a class="headerlink" href="#funktionsaufrufe" title="Permalink to this headline">¶</a></h2>
+<p>Im Folgenden werden Funktionsaufrufe erklärt. Die oben definierten Funktionen z.B. zur Berechnung der Beschleunigung können nun dafür verwendet werden, um schnell und einfach diese Beschleunigung zu berechnen. Dafür wird die Funktion mit dem Namen <em>calculate_acceleration</em> aufgerufen und die Parameter in der Klammer (<span class="math notranslate nohighlight">\(m, \alpha, \mu\)</span>) übergeben. Ohne diese gegebenen Parameter kann <span class="math notranslate nohighlight">\(a\)</span> nicht berechnet werden, es ist also essentiell für die Funktion. Sie gibt die Beschleunigung als Wert zurück, dieser kann sowohl in einer Variablen gespeichert oder direkt in der Konsole ausgegeben werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Variablen definieren und Variablenwerte setzen</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># Masse [kg]</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mi">40</span> <span class="c1"># degree</span>
+<span class="n">mueh</span> <span class="o">=</span> <span class="mf">0.03</span>
+
+<span class="c1"># Berechnung der Beschleunigung a für die definierten Variablen</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">calculate_acceleration</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">mueh</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Beschleunigung beträgt </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> Meter pro Sekunde.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die Beschleunigung beträgt 6.08 Meter pro Sekunde.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="graphische-darstellung-der-physikalischen-losung">
+<h2>Graphische Darstellung der physikalischen Lösung<a class="headerlink" href="#graphische-darstellung-der-physikalischen-losung" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialisieren einer Liste</span>
+<span class="n">messwerte</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># hier werden die Startbedingungen gesetzt</span>
+<span class="c1"># wenn s0 &amp; v0 = 0 sind, ist die Masse in Ruhe</span>
+<span class="n">s0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">time</span><span class="p">:</span> 
+    <span class="n">a</span> <span class="o">=</span> <span class="n">calculate_acceleration</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">mueh</span><span class="p">)</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">calculate_velocity</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">calculate_distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">s0</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+    <span class="n">messwerte</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">t</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">s</span><span class="p">])</span>
+
+<span class="c1"># Übertragen der Liste in ein Dataframe</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">messwerte</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">])</span>
+<span class="n">table</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>t</th>
+      <th>a</th>
+      <th>v</th>
+      <th>s</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>6.078223</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.5</td>
+      <td>6.078223</td>
+      <td>3.039112</td>
+      <td>0.759778</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>6.078223</td>
+      <td>6.078223</td>
+      <td>3.039112</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.5</td>
+      <td>6.078223</td>
+      <td>9.117335</td>
+      <td>6.838001</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2.0</td>
+      <td>6.078223</td>
+      <td>12.156446</td>
+      <td>12.156446</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Nun sollen der zurückgelegte Weg, die Geschwindigkeit und die Beschleunigung des Körpers visualisiert werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definieren der Größe und des Aussehens des Plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">({</span><span class="s1">&#39;figure.facecolor&#39;</span><span class="p">:</span><span class="s1">&#39;white&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># 1. Plot (links): Auftragen der Wegstrecken</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">table</span><span class="p">[</span><span class="s1">&#39;s&#39;</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">])])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s1">&#39;s&#39;</span><span class="p">])])</span>
+<span class="c1"># Achsenbeschriftungen hinzufügen</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Weg $\mathit</span><span class="si">{s}</span><span class="s2">$ (m)&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Zeit $\mathit</span><span class="si">{t}</span><span class="s2">$ (s)&quot;</span><span class="p">)</span>
+<span class="c1"># 2. Plot (Mitte): Auftragen der Geschwindigkeiten</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">table</span><span class="p">[</span><span class="s1">&#39;v&#39;</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">])])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s1">&#39;v&#39;</span><span class="p">])])</span>
+<span class="c1"># Achsenbeschriftungen hinzufügen</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Geschwindigkeit  $\mathit</span><span class="si">{v}</span><span class="s2">$ &quot;</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;($\frac</span><span class="si">{m}{s}</span><span class="s1">$)&#39;</span><span class="p">)</span> 
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Zeit $\mathit</span><span class="si">{t}</span><span class="s2">$ (s)&quot;</span><span class="p">)</span>
+<span class="c1"># 3. Plot (rechts): Auftragen der Beschleunigung</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">table</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]),</span><span class="nb">max</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">])])</span>
+<span class="c1"># Achsenbeschriftungen hinzufügen</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Beschleunigung $\mathit</span><span class="si">{a}</span><span class="s2">$ &quot;</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;($\frac</span><span class="si">{m}</span><span class="s1">{s^2}$)&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Zeit $\mathit</span><span class="si">{t}</span><span class="s2">$ (s)&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Schiefe_Ebene_14_0.png" src="../../../_images/Schiefe_Ebene_14_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="graphische-darstellung-unter-variation-der-anfangsbedingung">
+<h2>Graphische Darstellung unter Variation der Anfangsbedingung<a class="headerlink" href="#graphische-darstellung-unter-variation-der-anfangsbedingung" title="Permalink to this headline">¶</a></h2>
+<p>Jetzt können in einer Schleife für verschiedene <span class="math notranslate nohighlight">\(\alpha\)</span>-Winkel die Beschleunigungen <span class="math notranslate nohighlight">\(a\)</span>, die Geschwindigkeiten <span class="math notranslate nohighlight">\(v\)</span> und Wegstrecken <span class="math notranslate nohighlight">\(s\)</span> in Abhängigkeit von der Zeit <span class="math notranslate nohighlight">\(t\)</span> bestimmt werden:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definition verschiedener alpha-Winkel</span>
+<span class="n">alpha_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="c1"># hier werden die Startbedingungen gesetzt</span>
+<span class="n">s0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Wir definieren wieder eine Messwerttabelle</span>
+<span class="n">messwerte2</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Jetzt wird durch die Iteration des alpha_vector für alle alpha_i die Geschwindigkeit, der Weg und die Beschleunigung berechnet.</span>
+<span class="k">for</span> <span class="n">alpha_i</span> <span class="ow">in</span> <span class="n">alpha_vector</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">time</span><span class="p">:</span> 
+        <span class="n">a</span> <span class="o">=</span> <span class="n">calculate_acceleration</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">alpha_i</span><span class="p">,</span> <span class="n">mueh</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">calculate_velocity</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">calculate_distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">s0</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+        <span class="n">messwerte2</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">t</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">alpha_i</span><span class="p">])</span>
+
+<span class="c1"># Übertragen der Liste in ein Dataframe</span>
+<span class="n">table2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">messwerte2</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;alpha_i&#39;</span><span class="p">])</span>
+<span class="n">table2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>t</th>
+      <th>a</th>
+      <th>v</th>
+      <th>s</th>
+      <th>alpha_i</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>6.078223</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.5</td>
+      <td>6.078223</td>
+      <td>3.039112</td>
+      <td>0.759778</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>6.078223</td>
+      <td>6.078223</td>
+      <td>3.039112</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.5</td>
+      <td>6.078223</td>
+      <td>9.117335</td>
+      <td>6.838001</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2.0</td>
+      <td>6.078223</td>
+      <td>12.156446</td>
+      <td>12.156446</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>8.0</td>
+      <td>9.606578</td>
+      <td>76.852622</td>
+      <td>307.410488</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>8.5</td>
+      <td>9.606578</td>
+      <td>81.655911</td>
+      <td>347.037621</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>9.0</td>
+      <td>9.606578</td>
+      <td>86.459200</td>
+      <td>389.066399</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>9.5</td>
+      <td>9.606578</td>
+      <td>91.262489</td>
+      <td>433.496821</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>10.0</td>
+      <td>9.606578</td>
+      <td>96.065777</td>
+      <td>480.328887</td>
+      <td>80</td>
+    </tr>
+  </tbody>
+</table>
+<p>105 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">groups</span> <span class="o">=</span> <span class="n">table2</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;alpha_i&#39;</span><span class="p">)</span> <span class="c1"># Für die Visualsierung werden nun die verschiedenen Messungen bei unterschiedlichen alpha gruppiert</span>
+<span class="c1"># Definition einer Farbpalette </span>
+<span class="n">col_pal</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">alpha_vector</span><span class="p">))</span>
+<span class="c1"># Initialisieren einer Zählvariable</span>
+<span class="n">i</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="c1"># Iteration der alpha Gruppen und anschließende Visualsierung</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">],</span> <span class="n">group</span><span class="p">[</span><span class="s1">&#39;s&#39;</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">col_pal</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">],</span> <span class="n">group</span><span class="p">[</span><span class="s1">&#39;v&#39;</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">col_pal</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\alpha = $&quot;</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">°&quot;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">],</span> <span class="n">group</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">col_pal</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    
+
+    
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Weg $\mathit</span><span class="si">{s}</span><span class="s2">$ ($m$)&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Zeit $\mathit</span><span class="si">{t}</span><span class="s2">$ ($</span><span class="si">{s}</span><span class="s2">$)&quot;</span><span class="p">)</span> 
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">])])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s1">&#39;s&#39;</span><span class="p">])])</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Geschwindigkeit $\mathit</span><span class="si">{v}</span><span class="s2">$ ($\frac</span><span class="si">{m}{s}</span><span class="s2">$)&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Zeit $\mathit</span><span class="si">{t}</span><span class="s2">$ ($</span><span class="si">{s}</span><span class="s2">$)&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">])])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s1">&#39;v&#39;</span><span class="p">])])</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Beschleunigung $\mathit</span><span class="si">{a}</span><span class="s2">$ ($\frac</span><span class="si">{m}</span><span class="s2">{s^2}$)&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Zeit $\mathit</span><span class="si">{t}</span><span class="s2">$ ($</span><span class="si">{s}</span><span class="s2">$)&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]),</span><span class="nb">max</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">])])</span>
+
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper center&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">),</span>
+          <span class="n">fancybox</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">alpha_vector</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Schiefe_Ebene_17_0.png" src="../../../_images/Schiefe_Ebene_17_0.png" />
+</div>
+</div>
+<p>Nun soll Wegänderungen <span class="math notranslate nohighlight">\(s\)</span> über die Zeit <span class="math notranslate nohighlight">\(t\)</span> mit verschiedenen Startgeschwindigkeiten <span class="math notranslate nohighlight">\(v_0\)</span> visualisiert werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erstellen des v0-Vektors</span>
+<span class="n">v0_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c1"># Ausgabe des Vektors</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v0_vector</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0  4  8 12 16 20 24 28 32 36 40 44 48 52]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definition eines Dictionary</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">v0</span> <span class="ow">in</span> <span class="n">v0_vector</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">time</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">calculate_distance</span><span class="p">(</span><span class="n">calculate_acceleration</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">mueh</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">v0</span><span class="p">])</span>
+
+
+<span class="c1"># Erstellen eines Dataframes</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;v0&quot;</span><span class="p">])</span>
+<span class="c1"># Ausgabe von df</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>t</th>
+      <th>s</th>
+      <th>v0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.5</td>
+      <td>0.759778</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>3.039112</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.5</td>
+      <td>6.838001</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2.0</td>
+      <td>12.156446</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grouped_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;v0&quot;</span><span class="p">)</span>
+<span class="c1"># Definieren der Größe und des Aussehens des Plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="c1"># Anlegen einer color palette </span>
+<span class="c1"># Definition der Farbpalette </span>
+<span class="n">normalize</span> <span class="o">=</span> <span class="n">mcolors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">v0_vector</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">vmax</span><span class="o">=</span><span class="n">v0_vector</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">colormap</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">viridis</span>
+
+<span class="c1"># multiple line plot</span>
+<span class="n">iterator</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">grouped_data</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">],</span> <span class="n">group</span><span class="p">[</span><span class="s1">&#39;s&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colormap</span><span class="p">(</span><span class="n">normalize</span><span class="p">(</span><span class="n">name</span><span class="p">)),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$\mathit</span><span class="si">{v_0}</span><span class="s2">}$ =&quot;</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39; $\frac</span><span class="si">{m}{s}</span><span class="s1">$&#39;</span><span class="p">)</span>
+    <span class="n">iterator</span><span class="o">+=</span><span class="mi">1</span>
+
+<span class="c1"># Legende hinzufügen</span>
+<span class="c1">#plt.legend(loc=2, ncol=2)</span>
+ 
+<span class="c1"># Achsenbeschriftungen hinzufügen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Zeit $\mathit</span><span class="si">{t}</span><span class="s2">$ (s)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Weg $\mathit</span><span class="si">{s}</span><span class="s2">$ (m)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">margins</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+
+<span class="c1"># Legende</span>
+<span class="n">scalarmappaple</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="n">normalize</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">colormap</span><span class="p">)</span>
+<span class="n">scalarmappaple</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">v0_vector</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">scalarmappaple</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$v_0 (\frac</span><span class="si">{m}{s}</span><span class="s1">)$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Schiefe_Ebene_21_0.png" src="../../../_images/Schiefe_Ebene_21_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/Mechanik/Notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Looping.html" title="previous page">Looping</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Felix Erichson / Lynn Reuss / Richard Börner<br/>
+        
+            &copy; Copyright 2022 / CC BY-NC-SA.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

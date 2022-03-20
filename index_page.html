@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Python in der Vorlesung</title>
+    <title> &#8212; Python in der Vorlesung</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -50,8 +50,9 @@
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="index" title="Index" href="#" />
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="content/Grundlagen/installation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -82,8 +83,8 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="index_page.html">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
    Einleitung
   </a>
  </li>
@@ -181,6 +182,23 @@
             </button>
             
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/index_page.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
             <!-- Source interaction buttons -->
 
             <!-- Full screen (wrap in <a> to have style consistency -->
@@ -205,19 +223,53 @@
         
               <div>
                 
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="einleitung">
+<h1><img alt="Einleitung" src="_images/main.png" /><a class="headerlink" href="#einleitung" title="Permalink to this headline">¶</a></h1>
+<p>In der Vorlesung “Grundlagen der Physik” sollen Python Skripte zur Unterstüzung der Lehre eingesetzt werden.
+Mit dieser Dokumentation zeigen wir, wie man eine Pythonumgebung einrichtet und mit der Hilfe von Jupyter-Notebooks programmiert.
+Dabei sollen kleine Python-Programme Aufgaben aus Vorlesung und Seminar bearbeiten.
+Das Ziel ist, dass man Grundlagen der Programmierung und Datenvisualisierung erlangt.</p>
+<div class="admonition-was-ist-python admonition">
+<p class="admonition-title">Was ist Python?</p>
+<p>Python ist eine leicht erlernbare, leistungsfähige, höhere, open source Programmiersprache. Sie ist so konzipiert, dass sie einerseits gut lesbar ist und dennoch einen knackigen Programmierstil zulässt.</p>
+<p>Für mehr Informationen über Python:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.python.org/">Python Website</a></p></li>
+<li><p><a class="reference external" href="https://de.wikipedia.org/wiki/Python_(Programmiersprache)">Wikipedia</a></p></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
         
         <div class='prev-next-bottom'>
             
+    <a class='right-next' id="next-link" href="content/Grundlagen/installation.html" title="next page">Installation</a>
 
         </div>
         

@@ -1,0 +1,560 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wurfbewegung &#8212; Python in der Vorlesung</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Ampel" href="Ampel.html" />
+    <link rel="prev" title="Einführung" href="Geschwindigkeit.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      <img src="../../../_static/PyVo_Logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python in der Vorlesung</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../index_page.html">
+   Einleitung
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Grundlagen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Grundlagen/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Grundlagen/notebook_grundlagen.html">
+   Jupyter Notebooks
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Aufgaben
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../Mechanik_Preaambel.html">
+   Themengebiet Mechanik
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Geschwindigkeit.html">
+     Einführung
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Wurfbewegung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ampel.html">
+     Ampel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Looping.html">
+     Looping
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Schiefe_Ebene.html">
+     Schiefe Ebene
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/Mechanik/Notebooks/Wurfbewegung.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/Mechanik/Notebooks/Wurfbewegung.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabenstellung">
+   Aufgabenstellung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gegeben">
+   Gegeben
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gesucht">
+   Gesucht
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skizze">
+   Skizze
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#physikalischer-losungsweg">
+   Physikalischer Lösungsweg
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implemetierung-in-python">
+   Implemetierung in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphische-darstellung-der-abhangigkeiten">
+   Graphische Darstellung der Abhängigkeiten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphische-darstellung-unter-variation-der-anfangsbedingung-alpha-0">
+   Graphische Darstellung unter Variation der Anfangsbedingung
+   <span class="math notranslate nohighlight">
+    \(\alpha_0\)
+   </span>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="wurfbewegung">
+<h1>Wurfbewegung<a class="headerlink" href="#wurfbewegung" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="aufgabenstellung">
+<h2>Aufgabenstellung<a class="headerlink" href="#aufgabenstellung" title="Permalink to this headline">¶</a></h2>
+<p>Ein Ball soll vom Punkt <span class="math notranslate nohighlight">\(P_0(x_0 = 0; y_0 = h)\)</span> aus unter einem Winkel <span class="math notranslate nohighlight">\(\alpha_0\)</span> zur Horizontalen schräg nach oben geworfen werden.</p>
+<ol class="simple">
+<li><p>Stellen Sie die Bahngleichung y(x) auf!</p></li>
+<li><p>Zeigen Sie nun die Abhängikeit der Wurfhöhe <span class="math notranslate nohighlight">\(w_h\)</span>, der Wurfweite <span class="math notranslate nohighlight">\(w_w\)</span> und der Geschwindigkeit <span class="math notranslate nohighlight">\(v\)</span> von der Zeit <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+</ol>
+</div>
+<div class="section" id="gegeben">
+<h2>Gegeben<a class="headerlink" href="#gegeben" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Anfangsgeschwindigkeit <span class="math notranslate nohighlight">\(v_0 = 50 \,\frac{m}{s}\)</span></p></li>
+<li><p>Abwurfwinkel <span class="math notranslate nohighlight">\(\alpha = 50°\)</span></p></li>
+<li><p>Anfangshöhe <span class="math notranslate nohighlight">\(h = 1,80 \,m\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="gesucht">
+<h2>Gesucht<a class="headerlink" href="#gesucht" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Abhängigkeit der Wurfhöhe <span class="math notranslate nohighlight">\(w_h\)</span> von der Wurfweite <span class="math notranslate nohighlight">\(w_w\)</span>: <span class="math notranslate nohighlight">\(w_h(w_w)\)</span></p></li>
+<li><p>Abhängikeit der a) Wurfweite <span class="math notranslate nohighlight">\(w_w\)</span> b) Wurfhöhe <span class="math notranslate nohighlight">\(w_h\)</span> c) Geschwindigkeit <span class="math notranslate nohighlight">\(v\)</span> von der Zeit <span class="math notranslate nohighlight">\(t\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="skizze">
+<h2>Skizze<a class="headerlink" href="#skizze" title="Permalink to this headline">¶</a></h2>
+<p><img alt="title" src="../../../_images/Skizze_Wurf.png" /></p>
+</div>
+<div class="section" id="physikalischer-losungsweg">
+<h2>Physikalischer Lösungsweg<a class="headerlink" href="#physikalischer-losungsweg" title="Permalink to this headline">¶</a></h2>
+<p>Die Abhängigkeit der Wurfhöhe <span class="math notranslate nohighlight">\(w_h\)</span> von der Wurfweite <span class="math notranslate nohighlight">\(w_w\)</span> ergibt die Flugparabel <span class="math notranslate nohighlight">\(w_h(w_w)\)</span> mit:</p>
+<p><span class="math notranslate nohighlight">\(w_h(w_w) = -\frac{1}{2} \cdot \frac{g}{(v_0 \cdot cos(\alpha_0))^2} \cdot w_w^2 + tan(\alpha_0) \cdot w_w + h\)</span></p>
+<p>Wenn nun die Zeit als Parameter eingeführt wird, können <span class="math notranslate nohighlight">\(w_w\)</span>, <span class="math notranslate nohighlight">\(w_h\)</span> und <span class="math notranslate nohighlight">\(v\)</span> der Bewegung bestimmt werden:</p>
+<p><span class="math notranslate nohighlight">\(w_w(t) = v_0 \cdot t \cdot cos(\alpha_0)\)</span></p>
+<p><span class="math notranslate nohighlight">\(w_h(t) = - \frac{g}{2} \cdot t^2 + v_0 \cdot t \cdot sin(\alpha_0)\)</span></p>
+<p><span class="math notranslate nohighlight">\(v(t) = \sqrt{v_0^2 + g^2 \cdot t^2 - (2 \cdot v_0 \cdot g \cdot t \cdot sin(\alpha_0))}\)</span></p>
+</div>
+<div class="section" id="implemetierung-in-python">
+<h2>Implemetierung in Python<a class="headerlink" href="#implemetierung-in-python" title="Permalink to this headline">¶</a></h2>
+<p>Die oben dargestellten Abhängigkeiten können nun in der Programmiersprache Python beschrieben und anschließend graphisch dargestellt werden.</p>
+<p>Als Erstes werden die benötigten Bibliotheken importiert:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mcolors</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nun werden die benötigten Funktionen, welche im physikalischen Lösungsansatz beschrieben wurden in die Programmiersyntax überführt. Die Variablen wie <span class="math notranslate nohighlight">\(v_0\)</span>, <span class="math notranslate nohighlight">\(\alpha_0\)</span> und <span class="math notranslate nohighlight">\(h\)</span> werden außerhalb der Funktionen definiert. Es ist auch möglich diese Parameter als Funktionsparameter analog zu “t” oder “w_w” den Funktionen zu übergeben. Das hätte den Vorteil, dass man diese Parameter für jeden Funktionsaufruf verändern könnte. Für dieses Beispiel werden die Parameter global für alle Funktionen als Variablen definiert und nicht der Funktion übergeben.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">w_h_von_w_w</span><span class="p">(</span><span class="n">w_w</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">g</span> <span class="o">/</span> <span class="p">(</span><span class="n">v0</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">w_w</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span> <span class="o">*</span> <span class="n">w_w</span> <span class="o">+</span> <span class="n">h</span>
+
+<span class="k">def</span> <span class="nf">w_w_von_t</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">w_h_von_t</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">((</span><span class="o">-</span><span class="n">g</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="n">v0</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">alpha</span><span class="p">)))</span> 
+
+<span class="k">def</span> <span class="nf">v_von_t</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">v0</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">g</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">v0</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">alpha</span><span class="p">))))</span><span class="o">**</span><span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Anschließend werden Vektoren für die Wurfweite <span class="math notranslate nohighlight">\(w_w\)</span> und für die Zeit <span class="math notranslate nohighlight">\(t\)</span> erstellt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erstellen eines Vektors von Schritten der Wurfweite</span>
+<span class="n">w_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Erstellen eines Vektors mit Zeitschritten</span>
+<span class="n">Zeitschritte</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">10.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hier werden die gegebenen Parameter als globale Variablen definiert.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definition der Variablen</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.806</span> <span class="c1"># m/s^2</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># m/s</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1">#°</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">1.8</span> <span class="c1">#m</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="graphische-darstellung-der-abhangigkeiten">
+<h2>Graphische Darstellung der Abhängigkeiten<a class="headerlink" href="#graphische-darstellung-der-abhangigkeiten" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Visualisierung der Bahnkurve <span class="math notranslate nohighlight">\(w_h(w_w)\)</span></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">({</span><span class="s1">&#39;figure.facecolor&#39;</span><span class="p">:</span><span class="s1">&#39;white&#39;</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot: Visualisierung der Wurfweiten (w_w) und der daraus berechneten Wurfhöhen w_h_von_w_w</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_w</span><span class="p">,</span> <span class="n">w_h_von_w_w</span><span class="p">(</span><span class="n">w_w</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Wurfhöhe $\mathit</span><span class="si">{w_h}</span><span class="s2">$ (m)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Wurfweite $\mathit</span><span class="si">{w_w}</span><span class="s2">$ (s)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Bahnkurve ohne Zeitkomponente&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">w_w</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">w_w</span><span class="p">)])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Wurfbewegung_11_0.png" src="../../../_images/Wurfbewegung_11_0.png" />
+</div>
+</div>
+<ol class="simple">
+<li><p>Visualisierung der Abhängikeit der Wurfhöhe <span class="math notranslate nohighlight">\(w_h\)</span>, der Wurfweite <span class="math notranslate nohighlight">\(w_w\)</span> und der Geschwindigkeit <span class="math notranslate nohighlight">\(v\)</span> von der Zeit <span class="math notranslate nohighlight">\(t\)</span></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Plot 1: Visualisierung der Wurfhöhe w_h_von_t (Y-Achse) in Abhängigkeit der Zeit t (X-Achse)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Zeitschritte</span><span class="p">,</span> <span class="n">w_h_von_t</span><span class="p">(</span><span class="n">Zeitschritte</span><span class="p">))</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Wurfhöhe $\mathit</span><span class="si">{w_h}</span><span class="s2">$ (m)&quot;</span><span class="p">)</span> 
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Zeit $\mathit</span><span class="si">{t}</span><span class="s2">$ (s)&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">Zeitschritte</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">Zeitschritte</span><span class="p">)])</span>
+
+<span class="c1"># Plot 2: Visualisierung der Wurfweite w_w_von_t (Y-Achse) in Abhängigkeit der Zeit t (X-Achse)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Zeitschritte</span><span class="p">,</span> <span class="n">w_w_von_t</span><span class="p">(</span><span class="n">Zeitschritte</span><span class="p">))</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Wurfweite $\mathit</span><span class="si">{w_w}</span><span class="s2">$ (s)&quot;</span><span class="p">)</span> 
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Zeit $\mathit</span><span class="si">{t}</span><span class="s2">$ (s)&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">Zeitschritte</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">Zeitschritte</span><span class="p">)])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">w_w_von_t</span><span class="p">(</span><span class="n">Zeitschritte</span><span class="p">)),</span><span class="nb">max</span><span class="p">(</span><span class="n">w_w_von_t</span><span class="p">(</span><span class="n">Zeitschritte</span><span class="p">))])</span>
+
+<span class="c1"># Plot 3: Visualisierung der Geschwindigkeit v_von_t (Y-Achse) in Abhängigkeit der Zeit t (X-Achse)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Zeitschritte</span><span class="p">,</span> <span class="n">v_von_t</span><span class="p">(</span><span class="n">Zeitschritte</span><span class="p">))</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Geschwindigkeit  $\mathit</span><span class="si">{v}</span><span class="s2">$ &quot;</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;($\frac</span><span class="si">{m}{s}</span><span class="s1">$)&#39;</span><span class="p">)</span> 
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Zeit $\mathit</span><span class="si">{t}</span><span class="s2">$ (s)&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">Zeitschritte</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">Zeitschritte</span><span class="p">)])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Wurfbewegung_13_0.png" src="../../../_images/Wurfbewegung_13_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="graphische-darstellung-unter-variation-der-anfangsbedingung-alpha-0">
+<h2>Graphische Darstellung unter Variation der Anfangsbedingung <span class="math notranslate nohighlight">\(\alpha_0\)</span><a class="headerlink" href="#graphische-darstellung-unter-variation-der-anfangsbedingung-alpha-0" title="Permalink to this headline">¶</a></h2>
+<p>Nun können die Anfangswinkel <span class="math notranslate nohighlight">\(\alpha_0\)</span> verändert werden und dabei die Veränderung der Wurfparabel visualisiert werden. Es wurden die Wurfhöhe <span class="math notranslate nohighlight">\(w_h\)</span> und Wurfweite <span class="math notranslate nohighlight">\(w_w\)</span> in Abhängigkeit der Zeit <span class="math notranslate nohighlight">\(t\)</span> bestimmt. Die Anfangsgeschwindigkeit <span class="math notranslate nohighlight">\(v_0\)</span> wurde, für eine bessere Darstellung, auf 15 <span class="math notranslate nohighlight">\(\frac{m}{s}\)</span> reduziert.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erstellen eines Vektors mit alpha-Winkeln</span>
+<span class="n">alpha_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Initialisieren eines Vectors</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Alle Daten werden mittels der Schleife in diese Liste geschrieben</span>
+<span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="n">alpha_vector</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">Zeitschritte</span><span class="p">:</span>
+        <span class="n">v0</span> <span class="o">=</span> <span class="mi">15</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">w_w_von_t</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">w_h_von_t</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">alpha</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
+
+<span class="c1"># Konvertierung der erstellten Liste in ein DataFrame </span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;alpha&#39;</span><span class="p">,</span> <span class="s1">&#39;w_w&#39;</span><span class="p">,</span> <span class="s1">&#39;w_h&#39;</span><span class="p">])</span>
+
+<span class="c1"># Visualisierung</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">alpha</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="c1"># Definition der Farbpalette </span>
+<span class="n">normalize</span> <span class="o">=</span> <span class="n">mcolors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">vmax</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">colormap</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span>
+<span class="n">num</span><span class="o">=-</span><span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="n">num</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="n">filtered_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">alpha</span> <span class="o">==</span> <span class="n">i</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">filtered_df</span><span class="o">.</span><span class="n">w_w</span><span class="p">,</span> <span class="n">filtered_df</span><span class="o">.</span><span class="n">w_h</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colormap</span><span class="p">(</span><span class="n">normalize</span><span class="p">(</span><span class="n">i</span><span class="p">)),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;°&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Wurfweite $\mathit</span><span class="si">{w_w}</span><span class="s2">$ (m)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Wurfhöhe $\mathit</span><span class="si">{w_h}</span><span class="s2">$ (m)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Legende</span>
+<span class="n">scalarmappaple</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="n">normalize</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">colormap</span><span class="p">)</span>
+<span class="n">scalarmappaple</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">scalarmappaple</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\alpha (°)$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Wurfbewegung_15_0.png" src="../../../_images/Wurfbewegung_15_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/Mechanik/Notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Geschwindigkeit.html" title="previous page">Einführung</a>
+    <a class='right-next' id="next-link" href="Ampel.html" title="next page">Ampel</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Felix Erichson / Lynn Reuss / Richard Börner<br/>
+        
+            &copy; Copyright 2022 / CC BY-NC-SA.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
