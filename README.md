@@ -23,3 +23,8 @@ git clone https://github.com/BoernerLab/PyVo.git
 
 Eine Installationsanleitung und Informationen zur Verwendung finden Sie unter [https://boernerlab.github.io/PyVo/](https://boernerlab.github.io/PyVo/).
 
+## Lizenz
+
+PyVo ist lizensiert durch die Creative Commons Public Licenses: CC-BY-NC-SA
+
+![Lizenz](docs/Abbildungen/Cc-by-nc-sa_euro_icon.png)
