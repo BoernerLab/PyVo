@@ -27,7 +27,7 @@ Eine Installationsanleitung und Informationen zur Verwendung finden Sie unter [h
 
 *PyVo* wurde von Prof. Richard Börner, Felix Erichson und Lynn Reuss in der Gruppe von Prof. Richard Börner an der Hochschule Mittweida entwickelt und wird momentan von ebendiesen instand gehalten und weiterentwickelt. 
 
-Wenn Sie Fehler und Probleme finden oder Wünsche haben, dann machen Sie uns bitte darauf Aufmerksam über: [GitHubs Issue Tracker](https://github.com/BoernerLab/PyVo/tree/main/.github/ISSUE_TEMPLATE).
+Wenn Sie Fehler und Probleme finden oder Wünsche haben, dann machen Sie uns bitte darauf Aufmerksam über: [GitHubs Issue Tracker](https://github.com/BoernerLab/PyVo/issues/new/choose).
 
 ## PyVo zitieren
 
