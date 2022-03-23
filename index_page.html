@@ -49,7 +49,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="shortcut icon" href="_static/icon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Installation" href="content/Grundlagen/installation.html" />
@@ -85,7 +85,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1 current">
   <a class="reference internal" href="#">
-   Einleitung
+   Home
   </a>
  </li>
 </ul>
@@ -149,6 +149,21 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/Schwingung_Wellen/Schwingung_Preaambel.html">
+   Themengebiet mechanische Schwingungen und Wellen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/W%C3%A4rmelehre/W%C3%A4rmelehre_Preaambel.html">
+   Themengebiet Wärmelehre
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/Optik/Optik_Preaambel.html">
+   Themengebiet Optik
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -201,6 +216,19 @@
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BoernerLab/PyVo"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -215,6 +243,44 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#was-ist-pyvo">
+   Was ist PyVo?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uber-uns">
+   Über uns
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wenn-sie-sich-beteiligen-wollen">
+   Wenn Sie sich beteiligen wollen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pyvo-zitieren">
+   PyVo zitieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lizenz">
+   Lizenz
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -223,12 +289,15 @@
         
               <div>
                 
-  <div class="section" id="einleitung">
-<h1><img alt="Einleitung" src="_images/main.png" /><a class="headerlink" href="#einleitung" title="Permalink to this headline">¶</a></h1>
-<p>In der Vorlesung “Grundlagen der Physik” sollen Python Skripte zur Unterstüzung der Lehre eingesetzt werden.
-Mit dieser Dokumentation zeigen wir, wie man eine Pythonumgebung einrichtet und mit der Hilfe von Jupyter-Notebooks programmiert.
-Dabei sollen kleine Python-Programme Aufgaben aus Vorlesung und Seminar bearbeiten.
-Das Ziel ist, dass man Grundlagen der Programmierung und Datenvisualisierung erlangt.</p>
+  <div class="section" id="home">
+<h1><img alt="Home" src="_images/main.png" /><a class="headerlink" href="#home" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="was-ist-pyvo">
+<h2>Was ist PyVo?<a class="headerlink" href="#was-ist-pyvo" title="Permalink to this headline">¶</a></h2>
+<p><em>PyVo</em>, das steht für <em>Python in der Vorlesung</em>. In der Vorlesung “Grundlagen der Es handelt sich hierbei um eine Sammlung von Anleitungen zum Lösen von Physikaufgaben mit Hilfe der Programmiersprache
+Python. Diese Aufgaben kommen aus den Bereichen der Mechanik, Wärmelehre und Optik. Mit diesem Tutorial sollen sowohl
+Grundlagen der Programmierung in Python und der Datenvisualisierung erlangt werden, als auch demonstriert werden, dass
+physikalische Problemstellungen außerhalb des universitären oder schulischen Umfelds mittels Programmierkenntnissen
+gelöst werden können.</p>
 <div class="admonition-was-ist-python admonition">
 <p class="admonition-title">Was ist Python?</p>
 <p>Python ist eine leicht erlernbare, leistungsfähige, höhere, open source Programmiersprache. Sie ist so konzipiert, dass sie einerseits gut lesbar ist und dennoch einen knackigen Programmierstil zulässt.</p>
@@ -237,6 +306,42 @@ Das Ziel ist, dass man Grundlagen der Programmierung und Datenvisualisierung erl
 <li><p><a class="reference external" href="https://www.python.org/">Python Website</a></p></li>
 <li><p><a class="reference external" href="https://de.wikipedia.org/wiki/Python_(Programmiersprache)">Wikipedia</a></p></li>
 </ul>
+</div>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Das PyVo Projekt finden Sie auf der Githubseite:  <a class="reference external" href="https://github.com/BoernerLab/PyVo">https://github.com/BoernerLab/PyVo</a></p>
+<p>Sie können den Code auch unter folgedem <a class="reference external" href="https://github.com/BoernerLab/PyVo/archive/refs/heads/main.zip">Link</a> direkt herunterladen oder das Reposetory klinen mit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">BoernerLab</span><span class="o">/</span><span class="n">PyVo</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="uber-uns">
+<h2>Über uns<a class="headerlink" href="#uber-uns" title="Permalink to this headline">¶</a></h2>
+<p><em>PyVo</em> wurde von Prof. Richard Börner, Felix Erichson und Lynn Reuss in der Gruppe von Prof. Richard Börner am Laserinstitut Hochschule Mittweide entwickelt. Das Projekt wird derzeit von Felix Erichson und Lynn Reuss instandgehalten und erweitert.</p>
+</div>
+<div class="section" id="wenn-sie-sich-beteiligen-wollen">
+<h2>Wenn Sie sich beteiligen wollen<a class="headerlink" href="#wenn-sie-sich-beteiligen-wollen" title="Permalink to this headline">¶</a></h2>
+<p>Wenn Sie Fehler und Probleme finden oder Wünsche haben, dann machen Sie uns bitte darauf Aufmerksam über: <a class="reference external" href="https://github.com/BoernerLab/PyVo/issues/new/choose">GitHubs Issue Tracker</a>.</p>
+</div>
+<div class="section" id="pyvo-zitieren">
+<h2>PyVo zitieren<a class="headerlink" href="#pyvo-zitieren" title="Permalink to this headline">¶</a></h2>
+<p>Wenn Sie <em>PyVo</em> verwenden, zitieren Sie <em>PyVo</em> bitte folgendermaßen:</p>
+<p>Erichson, F., Reuss, L. V., &amp; Börner, R. (2022). PyVo (Version 1.0) [Computer software]</p>
+<p>oder</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@software</span><span class="p">{</span><span class="n">Erichson_PyVo_2022</span><span class="p">,</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Erichson</span><span class="p">,</span> <span class="n">Felix</span> <span class="ow">and</span> <span class="n">Reuss</span><span class="p">,</span> <span class="n">Lynn</span> <span class="n">V</span><span class="o">.</span> <span class="ow">and</span> <span class="n">Börner</span><span class="p">,</span> <span class="n">Richard</span><span class="p">},</span>
+    <span class="n">license</span> <span class="o">=</span> <span class="p">{</span><span class="n">CC</span><span class="o">-</span><span class="n">BY</span><span class="o">-</span><span class="n">NC</span><span class="o">-</span><span class="n">SA</span><span class="o">-</span><span class="mf">4.0</span><span class="p">},</span><span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">},</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="p">{{</span><span class="n">PyVo</span><span class="p">}},</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="mf">1.0</span><span class="p">},</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2022</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="lizenz">
+<h2>Lizenz<a class="headerlink" href="#lizenz" title="Permalink to this headline">¶</a></h2>
+<p>PyVo ist lizensiert durch die Creative Commons Public Licenses: CC-BY-NC-SA</p>
+<p><img alt="Lizenz" src="_images/Cc-by-nc-sa_euro_icon.png" /></p>
 </div>
 <div class="toctree-wrapper compound">
 </div>

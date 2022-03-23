@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jupyter Notebooks &#8212; Python in der Vorlesung</title>
+    <title>Themengebiet Wärmelehre &#8212; Python in der Vorlesung</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,8 +52,8 @@
     <link rel="shortcut icon" href="../../_static/icon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Themengebiet Mechanik" href="../Mechanik/Mechanik_Preaambel.html" />
-    <link rel="prev" title="Installation" href="installation.html" />
+    <link rel="next" title="Themengebiet Optik" href="../Optik/Optik_Preaambel.html" />
+    <link rel="prev" title="Themengebiet mechanische Schwingungen und Wellen" href="../Schwingung_Wellen/Schwingung_Preaambel.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -95,14 +95,14 @@
   Grundlagen
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="installation.html">
+  <a class="reference internal" href="../Grundlagen/installation.html">
    Installation
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Grundlagen/notebook_grundlagen.html">
    Jupyter Notebooks
   </a>
  </li>
@@ -112,7 +112,7 @@
   Aufgaben
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Mechanik/Mechanik_Preaambel.html">
    Themengebiet Mechanik
@@ -155,8 +155,8 @@
    Themengebiet mechanische Schwingungen und Wellen
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../W%C3%A4rmelehre/W%C3%A4rmelehre_Preaambel.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Themengebiet Wärmelehre
   </a>
  </li>
@@ -206,7 +206,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/content/Grundlagen/notebook_grundlagen.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/content/Wärmelehre/Wärmelehre_Preaambel.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -244,19 +244,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#arbeiten-mit-einem-notebook">
-   Arbeiten mit einem Notebook
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -265,37 +252,13 @@
         
               <div>
                 
-  <div class="section" id="jupyter-notebooks">
-<h1>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
-<p>Die Umgebung, in der die Programmierskripte geschrieben und kompiliert wurden, heißt Jupyter-Notebook bzw. Jupyter-Lab.
-Diese Tools ermöglichen ein übersichtliches Arbeiten und kombinieren Programmierung und Darstellung. Somit ist es für die
-Präsentation von wissenschaftlichen Arbeiten geeignet.</p>
-<p>Nachdem Sie Jupyter-Lab gestartet haben, sehen Sie links den Navigationsbereich und rechts den Bereich, in dem Sie einen neues Notebook erstellen können.</p>
-<p><img alt="Launcher" src="../../_images/JL_Guide_1.png" /></p>
-<p><strong>1</strong> Hier können Sie zu dem Ordner navigieren, in dem Ihre Jupyter Notebooks liegen. Wenn Sie Jupyter-Lab im Terminal geöffnet haben, dann ist der Root-Ordner in dieser Ansicht gleich dem Ordner, indem der <strong>jupyter-lab</strong> Befehl ausgeführt wurde.</p>
-<p><strong>2</strong> Hier sehen Sie den Inhalt des aktuellen Ordners und können mit einem Doppelklick eine Datei öffnen.</p>
-<p><strong>3</strong> Wenn Sie ein neues Notebook erstellen wollen, können Sie hier ein verfügbares Environment wählen. Hier finden Sie
-auch das PyVo Environment. Sollte PyVo nicht in dieser Liste erscheinen, kontrollieren Sie, ob Sie den letzten Schritt der
-Installationsanleitung Korrekt ausgeführt haben!</p>
-<p><strong>4</strong> Hier sehen Sie alle aktuell offenen Dateien, zwischen denen Sie navigieren können.</p>
-<div class="section" id="arbeiten-mit-einem-notebook">
-<h2>Arbeiten mit einem Notebook<a class="headerlink" href="#arbeiten-mit-einem-notebook" title="Permalink to this headline">¶</a></h2>
-<p><img alt="example_NB" src="../../_images/JL_Guide_2.png" /></p>
-<p><strong>1</strong> Aktionsmenü <br>
-<strong>2</strong> Markdownzellen für Textformatierung <br>
-<strong>3</strong> Codeblock für Pythoncode <br>
-<strong>4</strong> Auswahl des Kernels <br></p>
-<p>Nachdem Sie ein Notebook geöffnet oder erstellt haben, wählen Sie unter <strong>4</strong> den Kernel <strong>PyVo</strong> aus.</p>
-<p><img alt="example_NB" src="../../_images/JL_Guide_3.png" /></p>
-<p>Unter <strong>1</strong> sehen Sie ein Aktionsmenü und darunter den
-Programmierbereich.</p>
-<p><strong>3</strong> Codeblock: Hier wird der Programmiercode eingegeben und kann ausgeführt werden. Ein Codeblock wird ausgeführt,
-indem Sie <strong>Strg+Enter</strong> oder unter <strong>1</strong> auf das ▶️ Symbol drücken.</p>
-<p><strong>2</strong> Zeigt eine Markdown Zelle. Hier können Inhalte bzw. Texte im Markdownstil verfasst werden und anschließend als
-formatierter Text ausgegeben werden. Erklärungen und physikalische Grundlagen werden in Markdownzellen beschrieben.</p>
-<p>Um ein neu geöffnetes Notebook einmal vollständig auszuführen, klicken Sie unter <strong>1</strong> auf das ⏩-Symbol. Dies kann von
-Vorteil sein um Beispielsweise alle Variablen zu initialisieren.</p>
-</div>
+  <div class="section" id="themengebiet-warmelehre">
+<h1>Themengebiet Wärmelehre<a class="headerlink" href="#themengebiet-warmelehre" title="Permalink to this headline">¶</a></h1>
+<p>Die nächsten PyVo Aufgaben werden sich mit dem Themengebiert der Wärmelehre beschäftigen. Die Wärmelehre trifft Aussagen über das mittlere Verhalten von Vielteilchensystemen. Betrachtet werden Prozesse an denn Wärme beteiligt ist sowie Aggregatszustänge von Stoffen und ihren wechseln (sieden, schmelzen, …)<br><br>
+Im folgenden werden einige Aufgaben aus dem Bereich der Wärmelehre mithilfe der Programmiersprache Python umgesetzt.</p>
+<ul class="simple">
+<li><p>Eisblumen</p></li>
+</ul>
 </div>
 
     <script type="text/x-thebe-config">
@@ -311,7 +274,7 @@ Vorteil sein um Beispielsweise alle Variablen zu initialisieren.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content/Grundlagen"
+            path: "./content/Wärmelehre"
         },
         predefinedOutput: true
     }
@@ -323,8 +286,8 @@ Vorteil sein um Beispielsweise alle Variablen zu initialisieren.</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="installation.html" title="previous page">Installation</a>
-    <a class='right-next' id="next-link" href="../Mechanik/Mechanik_Preaambel.html" title="next page">Themengebiet Mechanik</a>
+    <a class='left-prev' id="prev-link" href="../Schwingung_Wellen/Schwingung_Preaambel.html" title="previous page">Themengebiet mechanische Schwingungen und Wellen</a>
+    <a class='right-next' id="next-link" href="../Optik/Optik_Preaambel.html" title="next page">Themengebiet Optik</a>
 
         </div>
         
