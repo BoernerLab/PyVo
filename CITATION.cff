@@ -1,13 +1,45 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
 cff-version: 1.2.0
 title: PyVo
 message: 'Wenn Sie PyVo verwenden, zitieren Sie bitte'
 type: software
 authors:
+  - given-names: Felix
+    family-names: Erichson
+    affiliation: Laserinstitut Hochschule Mittweida
+  - affiliation: Laserinstitut Hochschule Mittweida
+    given-names: Lynn V.
+    family-names: Reuss
+    orcid: 'https://orcid.org/0000-0003-0155-1798'
   - given-names: Richard
     family-names: Börner
     orcid: 'https://orcid.org/0000-0001-8407-6624'
-  - given-names: Felix
-    family-names: Erichson
-  - given-names: Lynn V.
-    family-names: Reuss
+    email: boerner1@hs-mittweida.de
+    affiliation: Laserinstitut Hochschule Mittweida
+identifiers:
+  - type: url
+    value: 'https://github.com/BoernerLab/PyVo'
+abstract: >-
+  PyVo, das steht für Python in der Vorlesung. Es
+  handelt sich hierbei um eine Sammlung von
+  Anleitungen zum Lösen von Physikaufgaben mit Hilfe
+  der Programmiersprache Python. Diese Aufgaben
+  kommen aus den Bereichen der Mechanik, Wärmelehre
+  und Optik. Mit diesem Tutorial sollen sowohl
+  Grundlagen der Programmierung in Python und der
+  Datenvisualisierung erlangt werden, als auch
+  demonstriert werden, dass physikalische
+  Problemstellungen außerhalb des universitären oder
+  schulischen Umfelds mittels Programmierkenntnissen
+  gelöst werden können.
+keywords:
+  - Python
+  - Basic Physics
+  - Teaching
+  - Lecture
+  - Seminar
 license: CC-BY-NC-SA-4.0
+version: '1.0'
+date-released: '2022-03-23'
