@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+title: PyVo
+message: 'Wenn Sie PyVo verwenden, zitieren Sie bitte'
+type: software
+authors:
+  - given-names: Richard
+    family-names: Börner
+    orcid: 'https://orcid.org/0000-0001-8407-6624'
+  - given-names: Felix
+    family-names: Erichson
+  - given-names: Lynn V.
+    family-names: Reuss
+license: CC-BY-NC-SA-4.0
