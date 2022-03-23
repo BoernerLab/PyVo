@@ -23,6 +23,19 @@ git clone https://github.com/BoernerLab/PyVo.git
 
 Eine Installationsanleitung und Informationen zur Verwendung finden Sie unter [https://boernerlab.github.io/PyVo/](https://boernerlab.github.io/PyVo/).
 
+## Wenn Sie sich beteiligen wollen
+
+*PyVo* wurde von Prof. Börner, Felix Erichson und Lynn Reuss in der Gruppe von Prof. Börner an der Hochschule Mittweida entwickelt und wird momentan von ebendiesen instand gehalten und weiterentwickelt. 
+
+Wenn Sie Fehler und Probleme finden oder Wünsche haben, dann machen Sie uns bitte darauf Aufmerksam über: [https://github.com/BoernerLab/PyVo/tree/main/.github/ISSUE_TEMPLATE](GitHUbs Issue Tracker).
+
+## PyVo zitieren
+
+Wenn Sie *PyVo* verwenden, zitieren Sie *PyVo* bitte folgendermaßen:
+
+- Erichson, F., Reuss, L. V., & Börner, R. (2022). PyVo (Version 1.0) [Computer software]
+- @software{Erichson_PyVo_2022,author = {Erichson, Felix and Reuss, Lynn V. and Börner, Richard},license = {CC-BY-NC-SA-4.0},month = {3},title = {{PyVo}},version = {1.0},year = {2022}}
+
 ## Lizenz
 
 PyVo ist lizensiert durch die Creative Commons Public Licenses: CC-BY-NC-SA
