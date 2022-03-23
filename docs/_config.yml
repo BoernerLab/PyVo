@@ -5,6 +5,11 @@ logo: PyVo_Logo.png
 copyright: "2022 / CC BY-NC-SA"  # Copyright year to be placed in the footer
 execute:
   execute_notebooks: "off"
+repository:
+  url: https://github.com/BoernerLab/PyVo
+  path_to_book: docs
+  branch: master
 html:
-    favicon : "Abbildungen/favicon.ico"
+  favicon : "icon.ico"
+  use_repository_button: true
 
