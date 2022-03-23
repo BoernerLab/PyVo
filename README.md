@@ -35,7 +35,7 @@ Wenn Sie *PyVo* verwenden, zitieren Sie *PyVo* bitte folgendermaßen:
 
 Erichson, F., Reuss, L. V., & Börner, R. (2022). PyVo (Version 1.0) [Computer software]
 
-or
+oder
 
 ```
 @software{Erichson_PyVo_2022,
