@@ -8,7 +8,7 @@ execute:
 repository:
   url: https://github.com/BoernerLab/PyVo
   path_to_book: docs
-  branch: master
+  branch: main
 html:
   favicon : "icon.ico"
   use_repository_button: true
