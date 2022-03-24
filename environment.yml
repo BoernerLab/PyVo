@@ -10,3 +10,4 @@ dependencies:
   - ipywidgets
   - jupyterlab
   - ipykernel
+  - ipympl
