@@ -33,7 +33,7 @@ Wenn Sie Fehler und Probleme finden oder Wünsche haben, dann machen Sie uns bit
 
 Wenn Sie *PyVo* verwenden, zitieren Sie *PyVo* bitte folgendermaßen:
 
-Erichson, F., Reuss, L. V., & Börner, R. (2022). PyVo (Version 1.0) [Computer software]
+Erichson, F., Reuss, L. V., & Börner, R. (2022). PyVo2.0 - Ein Lehrkonzept für den Einsatz von Python und Jupyter im Fach Grundlagen Physik (version 1.0) [Computer software]
 
 oder
 
@@ -41,7 +41,7 @@ oder
 @software{Erichson_PyVo_2022,
     author = {Erichson, Felix and Reuss, Lynn V. and Börner, Richard},
     license = {CC-BY-NC-SA-4.0},month = {3},
-    title = {{PyVo}},
+    title = {{PyVo2.0 - Ein Lehrkonzept für den Einsatz von Python und Jupyter im Fach Grundlagen Physik}},
     version = {1.0},
     year = {2022}}
 ```
