@@ -56,6 +56,10 @@ PyVo ist lizensiert durch die Creative Commons Public Licenses: CC-BY-NC-SA
 
 ![Lizenz](Abbildungen/Cc-by-nc-sa_euro_icon.png)
 
+## Danksagung
 
+PyVo wird im Rahmen eines Digital Fellows an Prof. Richard Börner durch das Bildungsportal Sachsen ([BPS](https://bildungsportal.sachsen.de/portal/digital-fellows-stellen-sich-vor-mit-python-physikalische-grundlagen-verstehen-lernen/)) im AK E-learning der LRK Sachsen gefördert.
+
+![BPS](Abbildungen/cropped-BPS_Web_Logo-02-2.png)
 
 
