@@ -1,7 +1,7 @@
 # ![Home](Abbildungen/headlines/main.png)
 
 ## Was ist PyVo?
-*PyVo*, das steht für *Python in der Vorlesung*. In der Vorlesung "Grundlagen der Es handelt sich hierbei um eine Sammlung von Anleitungen zum Lösen von Physikaufgaben mit Hilfe der Programmiersprache 
+*PyVo*, das steht für *Python in der Vorlesung*. Es handelt sich hierbei um eine Sammlung von Anleitungen zum Lösen von Physikaufgaben mit Hilfe der Programmiersprache 
 Python. Diese Aufgaben kommen aus den Bereichen der Mechanik, Wärmelehre und Optik. Mit diesem Tutorial sollen sowohl 
 Grundlagen der Programmierung in Python und der Datenvisualisierung erlangt werden, als auch demonstriert werden, dass 
 physikalische Problemstellungen außerhalb des universitären oder schulischen Umfelds mittels Programmierkenntnissen 
@@ -20,7 +20,7 @@ Für mehr Informationen über Python:
 
 Das PyVo Projekt finden Sie auf der Githubseite:  [https://github.com/BoernerLab/PyVo](https://github.com/BoernerLab/PyVo)
 
-Sie können den Code auch unter folgedem [Link](https://github.com/BoernerLab/PyVo/archive/refs/heads/main.zip) direkt herunterladen oder das Reposetory klinen mit:
+Sie können den Code auch unter folgendem [Link](https://github.com/BoernerLab/PyVo/archive/refs/heads/main.zip) direkt herunterladen oder das Repository klonen mit:
 ```
 git clone https://github.com/BoernerLab/PyVo.git
 ```
