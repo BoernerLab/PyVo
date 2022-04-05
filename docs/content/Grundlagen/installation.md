@@ -85,7 +85,7 @@ conda env create -f environment.yml
 
 Aktivieren Sie im Anschluss das Environment und setzen Sie ihr Environment als Jupyter Kernel mit:
 ```bash
-conda env create -f environment.yml
+conda activate PyVo
 python -m ipykernel install --user --name=PyVo
 ```
 
