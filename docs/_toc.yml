@@ -5,6 +5,7 @@ parts:
       chapters:
       - file: content/Grundlagen/installation
       - file: content/Grundlagen/notebook_grundlagen
+      - file: content/Grundlagen/bibliotheken
     - caption: Aufgaben
       chapters:
       - file: content/Mechanik/Mechanik_Preaambel
