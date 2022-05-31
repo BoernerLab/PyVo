@@ -1,5 +1,7 @@
 # Nützliche Bibliotheken
 
+Folgende Bibliotheken finden in PyVo Verwendung, sind jedoch ebenfalls im Allgemeinen in den Data Sciences nützlich. Bei Benutzung von PyVo müssen die folgenden Bibliotheken **nicht** zusätzlich installiert werden, da dies während der Installation bei der Erstellung des Environments automatisch geschieht. 
+
 **csv** für das Einlesen und Abspeichern von CSV-Dateien<br> 
 - Lesen und Schreiben von CSV-Dateien möglich, auch ohne genaue Details zum csv-Format zu kennen<br> 
 Einbindung `import csv`<br> 
