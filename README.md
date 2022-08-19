@@ -14,17 +14,16 @@ Es handelt sich hierbei um ein Tutorial zum Lösen von Physikaufgaben mit Hilfe 
 - Mechanik:
     - Kinematik
     - Dynamik
-    - Schwingungen
-    - Wellen
+    - Impuls
+    - Hook'sches Gesetz
+- Mechanische Schwingungen und Wellen
 - Wärmelehre
-- Optik:
-    - geometrische Optik
-    - Wellenoptik
+- Optik
 
 ## Installation
 
-Downloade oder Clone das PyVo-Repository:
+Clone oder lade das PyVo-Repository herunter:
 
-**hier gitlink einfügen**
+**https://github.com/BoernerLab/PyVo.git**
 
 Innerhalb von Jupyter-Lab oder Jupyter-Notebook kannst du die .ipynb-Dateien öffnen und anschließend den Code kompilieren.
