@@ -28,8 +28,8 @@ Für die Vorlesung werden wir ein Environment erstellen, in dem die Aufgaben bea
 Das Erstellen des PyVo Environments ist auf verschiedene Arten möglich:
 
 ````{tabbed} Windows (Anaconda Navigator)
-1. Öffnen Sie den Anaconda Navigator über die Suchleiste. Falls dieser nicht automatisch intalliert wurde, intallieren 
-Sie diesen zusätlich.
+1. Öffnen Sie den Anaconda Navigator über die Suchleiste. Falls dieser nicht automatisch installiert wurde, installieren 
+Sie diesen zusätzlich.
 <br/><br/><br/>
 
 2. Navigieren Sie zu den Environments.
