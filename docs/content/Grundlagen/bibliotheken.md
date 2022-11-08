@@ -1,6 +1,6 @@
 # Nützliche Bibliotheken
 
-Folgende Bibliotheken werden in PyVo verwendet und erfordern durch die allgemeine Installation von PyVo keine zusätzliche Installation. 
+Folgende Bibliotheken finden in PyVo Verwendung, sind jedoch ebenfalls im Allgemeinen in den Data Sciences nützlich. Bei Benutzung von PyVo müssen die folgenden Bibliotheken **nicht** zusätzlich installiert werden, da dies während der PyVo-Installation bei der Erstellung des Environments automatisch geschieht. Das Importieren in den Notebooks ist weiterhin notwendig.
 
 **csv** für das Einlesen und Abspeichern von CSV-Dateien<br> 
 - Lesen und Schreiben von CSV-Dateien möglich, auch ohne genaue Details zum csv-Format zu kennen<br> 
@@ -9,7 +9,8 @@ Funktionen `csv.reader(), csv.writer()`, mehr unter [csv](https://docs.python.or
 
 **numpy** für wissenschaftliche Berechnungen
 - Bearbeitung von multidimensionalen Arrays und Matrizen
-- bietet mathematische Funktionen f¨ur das Arbeiten mit Arrays und Matrizen<br>
+- bietet mathematische Funktionen für das Arbeiten mit Arrays und Matrizen<br>
+
 Einbindung `import numpy as np`<br>
 Funktionen `np.append()`, mehr unter [numpy](https://numpy.org/doc/stable/reference/).
 
@@ -18,7 +19,6 @@ Funktionen `np.append()`, mehr unter [numpy](https://numpy.org/doc/stable/refere
 - Datenverwaltung mittels Funktionen zur Verarbeitung von Dataframes<br>
 Einbindung `import pandas as pd`<br>
 Funktionen `pd.read_csv(), pd.DataFrame()`, mehr unter [pandas](https://pandas.pydata.org/docs/reference/index.html).
-
 
 **math** für mathematische Funktionen
 - enthält Funktionen wie Logarithmus- oder Exponentialfunktion, Winkelumrechnung, Wurzel/Potenzen uvm.
