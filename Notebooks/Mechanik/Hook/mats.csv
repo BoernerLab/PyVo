@@ -1,4 +1,4 @@
-Material;Elastizitätsmodul [GPa];Schubmodul [GPa];Dicke;Breite
+Material;Elastizitätsmodul [GPa];Schubmodul [GPa];Dicke [mm];Breite [mm]
 Wolfram;405;158;0.2;20
 Wolfram;405;158;0.2;30
 Wolfram;405;158;0.2;40
