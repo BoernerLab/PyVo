@@ -1,13 +1,17 @@
 name: PyVo
 channels:
-  - conda-forge
-  - anaconda
   - defaults
+  - conda-forge
 dependencies:
   - numpy
   - matplotlib
   - pandas
   - ipywidgets
-  - jupyterlab
+  - jupyterlab=3.6.4
   - ipykernel
-  - ipympl
+  - scipy
+  - seaborn
+  - pip
+  - pip:
+    - ipympl
+
