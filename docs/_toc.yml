@@ -15,9 +15,13 @@ parts:
         - file: content/Mechanik/Notebooks/Ampel
         - file: content/Mechanik/Notebooks/Looping
         - file: content/Mechanik/Notebooks/Schiefe_Ebene
+        - file: content/Mechanik/Notebooks/gekoppelte_Fahrzeuge
+        - file: content/Mechanik/Notebooks/Stoßpendel
+        - file: content/Mechanik/Notebooks/Stahlband
       - file: content/Schwingung_Wellen/Schwingung_Preaambel
       - file: content/Wärmelehre/Wärmelehre_Preaambel
       - file: content/Optik/Optik_Preaambel
+      - file: content/Optik/Notebooks/Schuetzenfisch
       
         
         

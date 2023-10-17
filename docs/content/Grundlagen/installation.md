@@ -28,6 +28,23 @@ Für die Vorlesung werden wir ein Environment erstellen, in dem die Aufgaben bea
 Das Erstellen des PyVo Environments ist auf verschiedene Arten möglich:
 
 ````{tabbed} Windows (Anaconda Navigator)
+Vorbereitung: Um die Installation des Environments durch den Import der `environment.yml` Datei zu ermöglichen, muss 
+der libmamba-solver installiert werden. Öffnen Sie dafür den Anaconda Prompt über die Suchleiste.<br>
+![5](../../Abbildungen/win-anaconda-prompt1.png)
+<br/><br/><br/>
+
+Führen Sie nun nacheinander die folgenden Befehle aus: 
+```bash
+conda update -n base conda
+
+conda install -n base conda-libmamba-solver
+
+conda config --set solver libmamba
+```
+Hat die Vorbereitung funktioniert, können Sie nun die Installation des Environments starten. Befolgenden Sie dafür die
+Schritt für Schritt Anleitung:
+<br/><br/><br/>
+
 1. Öffnen Sie den Anaconda Navigator über die Suchleiste. Falls dieser nicht automatisch installiert wurde, installieren 
 Sie diesen zusätzlich.
 <br/><br/><br/>
@@ -44,8 +61,7 @@ Sie diesen zusätzlich.
 ![3](../../Abbildungen/import_yml_2.png)
 <br/><br/><br/>
 
-5. Um nun die Installierten Pakete auch im Jupyter Lab verwenden zu können, öffnen Sie Anaconda Prompt über die Suchleiste.<br>
-![5](../../Abbildungen/win-anaconda-prompt1.png)
+5. Um nun die Installierten Pakete auch im Jupyter Lab verwenden zu können, öffnen Sie erneut den Anaconda Prompt über die Suchleiste.
 <br/><br/><br/>
 
 6. Kopieren Sie anschließend die folgenden Befehle und führen Sie diese mit Enter aus.
@@ -61,8 +77,22 @@ Im Anschluss können Sie JupyterLab unter **3** öffnen. Dabei öffnet sich Ihr 
 ````
 
 ````{tabbed} Windows (Anaconda Prompt)
-Öffnen das Anaconda Prompt über die Suchleiste, navigieren Sie zum PyVo Ordner und führen Sie folgenden Befehl aus:<br>
+Öffnen Sie das Anaconda Prompt über die Suchleiste und navigieren Sie zum PyVo Ordner<br>
 Hinweis: Sie können die Ordner wechseln mit dem Befehl **cd**. Beispiel: `cd \User\Name\Desktop\PyVo`
+
+Um eine reibungslose und schnelle Installation zu ermöglichen, wird zuerst der libmamba-solver installiert. Dafür führen Sie 
+nacheinander die folgenden Befehle aus: 
+
+```bash
+conda update -n base conda
+
+conda install -n base conda-libmamba-solver
+
+conda config --set solver libmamba
+```
+
+Danach kann das PyVo Environment mit folgendem Befehl erstellt werden.
+
 ```bash
 conda env create -f environment.yml
 ```
@@ -77,8 +107,22 @@ Tippen Sie nun den Befehl `jupyter-lab` in das Terminal um Jupyter-Lab zu öffne
 ````
 
 ````{tabbed} Linux / Mac
-Öffnen Sie das Terminal und navigieren Sie zum PyVo Ordner und führen Sie folgenden Befehl aus:<br>
+Öffnen Sie das Terminal und navigieren Sie zum PyVo Ordner.<br>
 Hinweis: Sie können die Ordner wechseln mit dem Befehl **cd**. Beispiel: `cd \User\Name\Desktop\PyVo`
+
+Um eine reibungslose und schnelle Installation zu ermöglichen, wird zuerst der libmamba-solver installiert. Dafür führen Sie 
+nacheinander die folgenden Befehle aus: 
+
+```bash
+conda update -n base conda
+
+conda install -n base conda-libmamba-solver
+
+conda config --set solver libmamba
+```
+
+Danach kann das PyVo Environment mit folgendem Befehl erstellt werden:
+
 ```bash
 conda env create -f environment.yml
 ```

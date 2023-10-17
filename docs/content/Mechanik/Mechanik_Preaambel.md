@@ -13,11 +13,10 @@ Im folgenden werden einige Aufgaben aus der Mechanik mithilfe der Programmierspr
 - Dynamik
     - [Looping](Notebooks/Looping.ipynb)
     - [Schiefe Ebene](Notebooks/Schiefe_Ebene.ipynb)
-    - Stoßpendel
     
 - Impuls
-    - Gekoppelte Fahrzeuge 
-    - Stoßpendel
+    - [Gekoppelte Fahrzeuge](Notebooks/gekoppelte_Fahrzeuge.ipynb) 
+    - [Stoßpendel](Notebooks/Stoßpendel.ipynb)
     
 - Hook'sches Gesetz 
-    - Stahlband
+    - [Stahlband](Notebooks/Stahlband.ipynb)
