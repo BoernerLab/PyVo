@@ -1,0 +1,925 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Einführung in die Datenauswertung &#8212; Python in der Vorlesung</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/icon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/PyVo_Logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python in der Vorlesung</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index_page.html">
+   Home
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Grundlagen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebook_grundlagen.html">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliotheken.html">
+   Nützliche Bibliotheken
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Aufgaben
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Mechanik/Mechanik_Preaambel.html">
+   Themengebiet Mechanik
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Mechanik/Notebooks/Geschwindigkeit.html">
+     Einführung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Mechanik/Notebooks/Wurfbewegung.html">
+     Wurfbewegung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Mechanik/Notebooks/Ampel.html">
+     Ampel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Mechanik/Notebooks/Looping.html">
+     Looping
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Mechanik/Notebooks/Schiefe_Ebene.html">
+     Schiefe Ebene
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Mechanik/Notebooks/gekoppelte_Fahrzeuge.html">
+     Gekoppelte Fahrzeuge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Mechanik/Notebooks/Sto%C3%9Fpendel.html">
+     Das Stoßpendel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Mechanik/Notebooks/Stahlband.html">
+     Das Stahlband
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Schwingung_Wellen/Schwingung_Preaambel.html">
+   Themengebiet mechanische Schwingungen und Wellen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../W%C3%A4rmelehre/W%C3%A4rmelehre_Preaambel.html">
+   Themengebiet Wärmelehre
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Optik/Optik_Preaambel.html">
+   Themengebiet Optik
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Optik/Notebooks/Schuetzenfisch.html">
+   Schützenfisch Aufgabe
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/Grundlagen/Datenauswertung.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BoernerLab/PyVo"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BoernerLab/PyVo/main?urlpath=tree/docs/content/Grundlagen/Datenauswertung.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importieren-der-benotigten-bibliotheken">
+   Importieren der benötigten Bibliotheken
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tidy-data">
+   Tidy Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einlesen-von-csv-dateien">
+   Einlesen von CSV-Dateien
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#berechnung-theoretische-zeiten-fur-die-wegstrecken-die-fallbeschleunigung">
+     Berechnung theoretische Zeiten für die Wegstrecken &amp; die Fallbeschleunigung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphische-darstellung">
+   Graphische Darstellung
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#s-t-diagramm-und-regression-der-theoretischen-und-gemessenen-zeiten">
+     s-t-Diagramm und Regression der theoretischen und gemessenen Zeiten:
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="einfuhrung-in-die-datenauswertung">
+<h1>Einführung in die Datenauswertung<a class="headerlink" href="#einfuhrung-in-die-datenauswertung" title="Permalink to this headline">¶</a></h1>
+<p>Im Folgenden soll demonstriert werden, wie erzeugte Messdaten in PyVo eingelesen, verarbeitet und visualisiert werden. Hierfür werden Messwerte aus dem Praktikum verwendet. Die gemessenen und theoretischen Zeiten, sowie die Regressionskurven werden in einem s-t-Diagramm visualisiert.</p>
+<div class="section" id="importieren-der-benotigten-bibliotheken">
+<h2>Importieren der benötigten Bibliotheken<a class="headerlink" href="#importieren-der-benotigten-bibliotheken" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">chained_assignment</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tidy-data">
+<h2>Tidy Data<a class="headerlink" href="#tidy-data" title="Permalink to this headline">¶</a></h2>
+<p>Bei der Datenanalyse besteht en Großteil aus der Bereinigung und Vorbereitung der Daten. Ein wichtiger Aspekt der Datenbereinigung ist die Strukturierung der Datensätze, um die Analyse zu erleichtern. Strukturierte Datensätze sind einfach zu verarbeiten, zu analysieren und zu visualisieren: Versuche können als Tabelle dargestellt werden, wobei die Tabellenspalten die Variablen repräsentieren und die Beobachtungen in den Zeilen stehen.</p>
+</div>
+<div class="section" id="einlesen-von-csv-dateien">
+<h2>Einlesen von CSV-Dateien<a class="headerlink" href="#einlesen-von-csv-dateien" title="Permalink to this headline">¶</a></h2>
+<p>CSV-Dateien können über die Bibliotheken <strong>csv</strong> oder <strong>pandas</strong> eingelesen werden. Im Gegensatz zu <strong>pandas</strong> muss die <strong>csv</strong> Bibliothek nicht vor Verwendung gesondert installiert werden, sondern ist in der Python-Installation enthalten. Im Folgenden werden die Methoden zum Einlesen einer CSV-Datei mittels beider Bibliotheken vorgestellt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mit csv Bibliothek:</span>
+<span class="c1"># 1. Datei öffnen </span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;Messdaten_V1.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvdatei</span><span class="p">:</span>
+    <span class="c1"># 2. Lesen des Datein-Inhalts (als Liste)</span>
+    <span class="n">messwerte_csv</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvdatei</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="c1"># 3. Umwandeln in ein Dataframe</span>
+    <span class="n">messwerte_csv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">messwerte_csv</span><span class="p">)</span>
+    <span class="c1"># 4. Erste Zeile als Header verwenden </span>
+    <span class="n">messwerte_csv</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">messwerte_csv</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1"># 5. Erste Zeile entfernen</span>
+    <span class="n">messwerte_csv</span> <span class="o">=</span> <span class="n">messwerte_csv</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">messwerte_csv</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Weg [m]</th>
+      <th>Masse [g]</th>
+      <th>TV</th>
+      <th>t1</th>
+      <th>t2</th>
+      <th>t3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>0.2</td>
+      <td>0</td>
+      <td>M1</td>
+      <td>0.813</td>
+      <td>0.859</td>
+      <td>0.856</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.3</td>
+      <td>0</td>
+      <td>M1</td>
+      <td>1.034</td>
+      <td>1.096</td>
+      <td>1.126</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.4</td>
+      <td>0</td>
+      <td>M1</td>
+      <td>1.25</td>
+      <td>1.239</td>
+      <td>1.245</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.5</td>
+      <td>0</td>
+      <td>M1</td>
+      <td>1.38</td>
+      <td>1.362</td>
+      <td>1.385</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.6</td>
+      <td>0</td>
+      <td>M1</td>
+      <td>1.487</td>
+      <td>1.483</td>
+      <td>1.524</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mit pandas Bibliothek</span>
+<span class="c1"># Einlesen der Datei   </span>
+<span class="n">messwerte_pd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Messdaten_V1.csv&quot;</span><span class="p">)</span>
+<span class="c1"># Vorwissen über Datei nötig: besitzt einen Header, separator = &quot;,&quot;, etc. </span>
+
+<span class="n">messwerte_pd</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Weg [m]</th>
+      <th>Masse [g]</th>
+      <th>TV</th>
+      <th>t1</th>
+      <th>t2</th>
+      <th>t3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>16</th>
+      <td>0.5</td>
+      <td>30</td>
+      <td>M3</td>
+      <td>1.479</td>
+      <td>1.511</td>
+      <td>1.495</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.5</td>
+      <td>40</td>
+      <td>M3</td>
+      <td>1.494</td>
+      <td>1.545</td>
+      <td>1.506</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.5</td>
+      <td>50</td>
+      <td>M3</td>
+      <td>1.522</td>
+      <td>1.551</td>
+      <td>1.556</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>0.5</td>
+      <td>60</td>
+      <td>M3</td>
+      <td>1.554</td>
+      <td>1.571</td>
+      <td>1.578</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>0.5</td>
+      <td>70</td>
+      <td>M3</td>
+      <td>1.609</td>
+      <td>1.649</td>
+      <td>1.589</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Bei der Verwendung der <strong>csv</strong> Bibliothek, wird die Datei geöffnet, mit <code class="docutils literal notranslate"><span class="pre">csv.reader()</span></code>gelesen und der Inhalt als csv-Objekt abgespeichert. Dieses kann anschließend mittels der Dataframe-Funktion von <strong>pandas</strong> in eine Datentabelle umgewandelt werden. <br />
+Bei der Benutzung der Funktion <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>von <strong>pandas</strong> wird der Inhalt der CSV-Datei direkt als Dataframe in einer Variable abgespeichert.</p>
+<p>Nachdem die Datei eingelesen wurde, kann nun auf den Inhalt zugegriffen werden. Auch können simple statistische Werte können mit der <strong>pandas</strong> Funktion <code class="docutils literal notranslate"><span class="pre">describe()</span></code> für jede Spalte ermittelt werden (mehr unter <a class="reference external" href="https://www.tutorialspoint.com/python_pandas/python_pandas_descriptive_statistics.htm">Pandas Descriptive Statistics</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="n">messwerte_pd</span><span class="o">.</span><span class="n">describe</span><span class="p">(),</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Weg [m]</th>
+      <th>Masse [g]</th>
+      <th>t1</th>
+      <th>t2</th>
+      <th>t3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>21.000</td>
+      <td>21.000</td>
+      <td>21.000</td>
+      <td>21.000</td>
+      <td>21.000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.500</td>
+      <td>13.333</td>
+      <td>0.959</td>
+      <td>0.974</td>
+      <td>0.975</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.167</td>
+      <td>22.657</td>
+      <td>0.695</td>
+      <td>0.704</td>
+      <td>0.703</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.200</td>
+      <td>0.000</td>
+      <td>0.029</td>
+      <td>0.029</td>
+      <td>0.029</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.400</td>
+      <td>0.000</td>
+      <td>0.047</td>
+      <td>0.047</td>
+      <td>0.047</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.500</td>
+      <td>0.000</td>
+      <td>1.380</td>
+      <td>1.362</td>
+      <td>1.385</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.600</td>
+      <td>20.000</td>
+      <td>1.494</td>
+      <td>1.545</td>
+      <td>1.524</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>0.800</td>
+      <td>70.000</td>
+      <td>1.787</td>
+      <td>1.751</td>
+      <td>1.771</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="berechnung-theoretische-zeiten-fur-die-wegstrecken-die-fallbeschleunigung">
+<h3>Berechnung theoretische Zeiten für die Wegstrecken &amp; die Fallbeschleunigung<a class="headerlink" href="#berechnung-theoretische-zeiten-fur-die-wegstrecken-die-fallbeschleunigung" title="Permalink to this headline">¶</a></h3>
+<p>Der eingelesenen CSV-Datei können nun eine weitere Spalten hinzugefügt werden: Es soll jeweils zeilenweise der Mittelwert von t1-t3, die theoretische Zeit und die experimentelle Fallbeschleunigung hinzugefügt werden. Dies soll jedoch nur an Teilversuch M1 stattfinden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trennung von Teilversuch M1 von M2 und M3</span>
+<span class="c1"># m1 ist ein Dataframe </span>
+<span class="n">m1</span> <span class="o">=</span> <span class="n">messwerte_pd</span><span class="p">[(</span><span class="n">messwerte_pd</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;TV&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;M1&#39;</span><span class="p">)]</span>
+<span class="c1"># Zusatz: </span>
+<span class="c1"># m2 = messwerte_pd[(messwerte_pd.loc[:,(&#39;TV&#39;)] == &#39;M2&#39;)]</span>
+<span class="c1"># m3 = messwerte_pd[(messwerte_pd.loc[:,(&#39;TV&#39;)] == &#39;M3&#39;)]</span>
+
+<span class="c1"># Berechnung des Mittelwerts und abspeichern als neue Spalte</span>
+<span class="n">m1</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,(</span><span class="s1">&#39;mean_t [s]&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">messwerte_pd</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,(</span><span class="s1">&#39;t1&#39;</span><span class="p">,</span><span class="s1">&#39;t2&#39;</span><span class="p">,</span><span class="s1">&#39;t3&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># gegebene Werte für weiteren Berechnungen</span>
+<span class="n">mass_1</span> <span class="o">=</span> <span class="mf">11.1</span>
+<span class="n">mass_2</span> <span class="o">=</span> <span class="mf">204.8</span>
+
+<span class="c1"># Theoretische Zeiten (t_theo) für die gegebenen Wegstrecken berechnen</span>
+<span class="n">m1</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;t_theo [s]&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m1</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;Weg [m]&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">mass_1</span> <span class="o">+</span> <span class="n">mass_2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">mass_1</span> <span class="o">*</span> <span class="mf">9.81</span><span class="p">))</span>
+
+<span class="c1"># Fallbeschleunigung</span>
+<span class="n">m1</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;g_exp [m/s²]&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">mass_1</span> <span class="o">+</span> <span class="n">mass_2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m1</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;Weg [m]&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">m1</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;mean_t [s]&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="n">mass_1</span>
+
+<span class="n">m1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Weg [m]</th>
+      <th>Masse [g]</th>
+      <th>TV</th>
+      <th>t1</th>
+      <th>t2</th>
+      <th>t3</th>
+      <th>mean_t [s]</th>
+      <th>t_theo [s]</th>
+      <th>g_exp [m/s²]</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.2</td>
+      <td>0</td>
+      <td>M1</td>
+      <td>0.813</td>
+      <td>0.859</td>
+      <td>0.856</td>
+      <td>0.842667</td>
+      <td>0.890554</td>
+      <td>10.956656</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.3</td>
+      <td>0</td>
+      <td>M1</td>
+      <td>1.034</td>
+      <td>1.096</td>
+      <td>1.126</td>
+      <td>1.085333</td>
+      <td>1.090702</td>
+      <td>9.907284</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.4</td>
+      <td>0</td>
+      <td>M1</td>
+      <td>1.250</td>
+      <td>1.239</td>
+      <td>1.245</td>
+      <td>1.244667</td>
+      <td>1.259434</td>
+      <td>10.044158</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.5</td>
+      <td>0</td>
+      <td>M1</td>
+      <td>1.380</td>
+      <td>1.362</td>
+      <td>1.385</td>
+      <td>1.375667</td>
+      <td>1.408090</td>
+      <td>10.277873</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.6</td>
+      <td>0</td>
+      <td>M1</td>
+      <td>1.487</td>
+      <td>1.483</td>
+      <td>1.524</td>
+      <td>1.498000</td>
+      <td>1.542485</td>
+      <td>10.401292</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.7</td>
+      <td>0</td>
+      <td>M1</td>
+      <td>1.601</td>
+      <td>1.640</td>
+      <td>1.656</td>
+      <td>1.632333</td>
+      <td>1.666074</td>
+      <td>10.219744</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.8</td>
+      <td>0</td>
+      <td>M1</td>
+      <td>1.787</td>
+      <td>1.751</td>
+      <td>1.771</td>
+      <td>1.769667</td>
+      <td>1.781108</td>
+      <td>9.937261</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Das Dataframe kann nun mit den hinzugefügten Spalten im CSV-Format abgespeichert werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m1</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;Messdaten_V1_mitWerten.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="graphische-darstellung">
+<h2>Graphische Darstellung<a class="headerlink" href="#graphische-darstellung" title="Permalink to this headline">¶</a></h2>
+<p>Die Werte können nun visualisiert werden. Dafür müssen die einzelnen Teilversuche M1-M3 voneinander getrennt werden, da hier nur die erste Messreihe M1 für die Visualisierung verwendet wird.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># definieren der Funktion: </span>
+<span class="c1"># Regression für s(t) = m1 / (m1+m2) * (g/2) * t**2</span>
+<span class="k">def</span> <span class="nf">reg_func</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">mass_1</span> <span class="o">/</span> <span class="p">(</span><span class="n">mass_1</span> <span class="o">+</span> <span class="n">mass_2</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">g</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># Mittelwerte und Fehler der berechneten Fallbeschleunigungen berechnen</span>
+<span class="c1"># wichtige Funktionen hier: mean() [Mittelwert], std() [Standardabweichung] und sqrt() [Quadratwurzel]</span>
+<span class="n">g_exp_mean</span> <span class="o">=</span> <span class="n">m1</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;g_exp [m/s²]&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">g_exp_error</span> <span class="o">=</span> <span class="n">m1</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;g_exp [m/s²]&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m1</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;g_exp [m/s²]&#39;</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⟨g_exp⟩ = </span><span class="si">{</span><span class="n">g_exp_mean</span><span class="si">}</span><span class="s2"> ± </span><span class="si">{</span><span class="n">g_exp_error</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⟨g_exp⟩ = 10.249181099944925 ± 0.136414111332273 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="s-t-diagramm-und-regression-der-theoretischen-und-gemessenen-zeiten">
+<h3>s-t-Diagramm und Regression der theoretischen und gemessenen Zeiten:<a class="headerlink" href="#s-t-diagramm-und-regression-der-theoretischen-und-gemessenen-zeiten" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Regression Experiment</span>
+<span class="n">popt_exp</span><span class="p">,</span> <span class="n">pcov_exp</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">reg_func</span><span class="p">,</span> <span class="n">m1</span><span class="p">[</span><span class="s1">&#39;mean_t [s]&#39;</span><span class="p">],</span> <span class="n">m1</span><span class="p">[</span><span class="s1">&#39;Weg [m]&#39;</span><span class="p">])</span>
+
+<span class="c1"># Regression Theorie</span>
+<span class="n">popt_theorie</span><span class="p">,</span> <span class="n">pcov_theorie</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">reg_func</span><span class="p">,</span> <span class="n">m1</span><span class="p">[</span><span class="s1">&#39;t_theo [s]&#39;</span><span class="p">],</span> <span class="n">m1</span><span class="p">[</span><span class="s1">&#39;Weg [m]&#39;</span><span class="p">])</span>
+<span class="c1"># Funktion curve_fit benötigt die Zeiten t und die Wegstrecken s aus der Messung </span>
+<span class="c1"># optimiert die Fallbeschleunigung g</span>
+
+<span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">m1</span><span class="p">[</span><span class="s1">&#39;Weg [m]&#39;</span><span class="p">],</span><span class="n">x</span> <span class="o">=</span> <span class="n">m1</span><span class="p">[</span><span class="s1">&#39;mean_t [s]&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#66c2a5&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">m1</span><span class="p">[</span><span class="s1">&#39;Weg [m]&#39;</span><span class="p">],</span> <span class="n">x</span> <span class="o">=</span> <span class="n">m1</span><span class="p">[</span><span class="s1">&#39;t_theo [s]&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#fc8d62&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> <span class="n">reg_func</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> <span class="n">popt_exp</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#66c2a5&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> <span class="n">reg_func</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> <span class="n">popt_theorie</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#fc8d62&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Zeit $\mathit</span><span class="si">{t}</span><span class="s2">$ (s)&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Weg $\mathit</span><span class="si">{s}</span><span class="s2">$ (m)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.9</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Experiment&#39;</span><span class="p">,</span> <span class="s1">&#39;Theorie&#39;</span><span class="p">],</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">handlelength</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$g_</span><span class="si">{Regression}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot; $\frac</span><span class="si">{m}</span><span class="s2">{s^2}$&quot;</span>  <span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Exp: </span><span class="si">{</span><span class="n">t1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">popt_exp</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">t1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Abbildung speichern</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;V1_RegressionM1.png&quot;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Datenauswertung_16_0.png" src="../../_images/Datenauswertung_16_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/Grundlagen"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Felix Erichson / Lynn Reuss / Richard Börner<br/>
+        
+            &copy; Copyright 2022 / CC BY-NC-SA.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

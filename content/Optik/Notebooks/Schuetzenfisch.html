@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schützenfisch Aufgabe &#8212; Python in der Vorlesung</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="shortcut icon" href="../../../_static/icon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="Themengebiet Optik" href="../Optik_Preaambel.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      <img src="../../../_static/PyVo_Logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python in der Vorlesung</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../index_page.html">
+   Home
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Grundlagen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Grundlagen/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Grundlagen/notebook_grundlagen.html">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Grundlagen/bibliotheken.html">
+   Nützliche Bibliotheken
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Aufgaben
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Mechanik/Mechanik_Preaambel.html">
+   Themengebiet Mechanik
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Mechanik/Notebooks/Geschwindigkeit.html">
+     Einführung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Mechanik/Notebooks/Wurfbewegung.html">
+     Wurfbewegung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Mechanik/Notebooks/Ampel.html">
+     Ampel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Mechanik/Notebooks/Looping.html">
+     Looping
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Mechanik/Notebooks/Schiefe_Ebene.html">
+     Schiefe Ebene
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Mechanik/Notebooks/gekoppelte_Fahrzeuge.html">
+     Gekoppelte Fahrzeuge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Mechanik/Notebooks/Sto%C3%9Fpendel.html">
+     Das Stoßpendel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Mechanik/Notebooks/Stahlband.html">
+     Das Stahlband
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Schwingung_Wellen/Schwingung_Preaambel.html">
+   Themengebiet mechanische Schwingungen und Wellen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../W%C3%A4rmelehre/W%C3%A4rmelehre_Preaambel.html">
+   Themengebiet Wärmelehre
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Optik_Preaambel.html">
+   Themengebiet Optik
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Schützenfisch Aufgabe
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/Optik/Notebooks/Schuetzenfisch.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BoernerLab/PyVo"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BoernerLab/PyVo/main?urlpath=tree/docs/content/Optik/Notebooks/Schuetzenfisch.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="schutzenfisch-aufgabe">
+<h1>Schützenfisch Aufgabe<a class="headerlink" href="#schutzenfisch-aufgabe" title="Permalink to this headline">¶</a></h1>
+<p>Gegeben:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n_{H_2O}\)</span> = 1,333 (bei <span class="math notranslate nohighlight">\(\vartheta\)</span> = 20°C und <span class="math notranslate nohighlight">\(\lambda\)</span> = 589nm)</p></li>
+<li><p><span class="math notranslate nohighlight">\(n_{Luft}\)</span> = 1</p></li>
+</ul>
+<p>Mit dem Brechunggesetz</p>
+<p><span class="math notranslate nohighlight">\( n_{Luft} \cdot \sin(\alpha) = n_{H_2O} \cdot \sin(\beta)  \)</span></p>
+<p>und <span class="math notranslate nohighlight">\(\alpha=\delta+\beta\)</span> ergibt sich</p>
+<p><span class="math notranslate nohighlight">\( n_{Luft} \cdot \sin(\delta+\beta) = n_{H_2O} \cdot \sin(\beta)  \)</span>.</p>
+<p>Diese Formel lässt sich über die Näherung für kleine Winkel <span class="math notranslate nohighlight">\(\sin(\alpha)=\alpha\)</span> zu</p>
+<p><span class="math notranslate nohighlight">\(\delta\approx\frac{\beta}{3}\)</span></p>
+<p>umstellen.</p>
+<p><img alt="Skizze" src="../../../_images/Schuetzenfisch_Skizze.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import der benötigten Bibliotheken</span>
+<span class="kn">import</span> <span class="nn">math</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calulate_alpha</span><span class="p">(</span><span class="n">beta</span><span class="p">):</span>
+    <span class="n">sina</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+    <span class="n">sina</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">beta</span><span class="p">))</span> <span class="o">*</span> <span class="mf">1.333</span> <span class="c1">#n_H20=1.333</span>
+    <span class="k">if</span> <span class="n">sina</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">asin</span><span class="p">(</span><span class="n">sina</span><span class="p">))</span> 
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sina</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">asin</span><span class="p">(</span><span class="n">sina</span><span class="p">))</span> 
+    <span class="k">return</span> <span class="n">alpha</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_fisch_aufgabe</span><span class="p">(</span><span class="n">beta</span><span class="p">):</span>
+    <span class="c1">#Abfangen zu großer Winkel</span>
+    <span class="k">if</span> <span class="n">beta</span> <span class="o">&gt;</span> <span class="mi">90</span> <span class="ow">or</span> <span class="n">beta</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">90</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Ich glaube der Fisch liegt auf dem Trockenen. Damit der Fisch nicht aus dem Wasser hüpft halte beta unter 90 ° bzw. über -90°&#39;</span><span class="p">)</span>
+
+    <span class="c1">#Abfangen von Winkeln, die größer als der Totalreflexionswinkel für den Übergang Wasser-&gt;Luft sind (ca. 48 °)</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">beta</span> <span class="o">&gt;</span> <span class="mi">48</span> <span class="ow">and</span> <span class="n">beta</span> <span class="o">&lt;</span> <span class="mi">90</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">beta</span><span class="o">&lt;-</span><span class="mi">48</span> <span class="ow">and</span> <span class="n">beta</span><span class="o">&gt;-</span><span class="mi">90</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Der eingegebene Winkel liegt über dem Grenzwinkel für Totalreflexion für den Übergang von Wasser zu Luft von ca. 48 °&#39;</span>
+              <span class="s1">&#39; d.h. der Fisch sieht unter diesem Winkel die Grenzfläche Wasser-Luft als wäre sie ein Spiegel&#39;</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="n">calulate_alpha</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span> <span class="c1">#Funktion aufrufen, die den Ablenkwinkel alpha berechnet</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">8</span>
+        <span class="n">beta1</span> <span class="o">=</span> <span class="n">beta</span> <span class="o">+</span> <span class="mi">270</span> 
+        <span class="n">endbetay</span> <span class="o">=</span>  <span class="n">length</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">beta1</span><span class="p">))</span>
+        <span class="n">endbetax</span> <span class="o">=</span> <span class="n">length</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">beta1</span><span class="p">))</span>
+        
+        <span class="n">beta2</span> <span class="o">=</span> <span class="n">beta1</span> <span class="o">-</span> <span class="mi">180</span> 
+        <span class="n">endbeta2y</span> <span class="o">=</span>  <span class="n">length</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">beta2</span><span class="p">))</span>
+        <span class="n">endbeta2x</span> <span class="o">=</span> <span class="n">length</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">beta2</span><span class="p">))</span>
+        
+     
+        <span class="n">alpha1</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">+</span> <span class="mi">90</span>
+        <span class="n">endalphay</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">length</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">alpha1</span><span class="p">))</span>
+        <span class="n">endalphax</span> <span class="o">=</span> <span class="n">length</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">alpha1</span><span class="p">))</span>
+
+        <span class="c1"># plot the points      </span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>   <span class="c1"># set the bounds to be 10, 10</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">endbetax</span><span class="p">],</span> <span class="p">[</span><span class="n">y</span><span class="p">,</span> <span class="n">endbetay</span><span class="p">])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">endbetax</span><span class="p">,</span> <span class="n">endbetay</span><span class="p">,</span> <span class="s1">&#39;Fisch&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">endalphax</span><span class="p">],</span> <span class="p">[</span><span class="n">y</span><span class="p">,</span> <span class="n">endalphay</span><span class="p">])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">endalphax</span><span class="p">,</span> <span class="n">endalphay</span><span class="p">,</span> <span class="s1">&#39;Fliege&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">endbeta2x</span><span class="p">],</span> <span class="p">[</span><span class="n">y</span><span class="p">,</span> <span class="n">endbeta2y</span><span class="p">])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">endbeta2x</span><span class="p">,</span> <span class="n">endbeta2y</span><span class="p">,</span> <span class="s1">&#39;Bild&#39;</span><span class="p">)</span>     
+        <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;Luft ($n_</span><span class="si">{Luft}</span><span class="s1">$=1)&#39;</span><span class="p">)</span>   
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;Wasser $(n_</span><span class="si">{H_2O}</span><span class="s1">$=1.333)&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$\alpha = $&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;$^\circ$&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$\beta = $&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span> <span class="s1">&#39;$^\circ$&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$\delta = $&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">alpha</span> <span class="o">-</span> <span class="n">beta</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span> <span class="s1">&#39;$^\circ$&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_fisch_aufgabe</span><span class="p">(</span><span class="n">beta</span> <span class="o">=</span> <span class="mi">45</span><span class="p">)</span> <span class="c1">#Blickwinkel des Fisches definieren</span>
+<span class="c1">#Die getroffene Näherung für kleine Winkel gilt bis ca. 15°, darüber wird die Abweichung zu groß!</span>
+<span class="c1">#vgl. beta und delta oben rechts in der Darstellung </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Schuetzenfisch_5_0.png" src="../../../_images/Schuetzenfisch_5_0.png" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "pyvo"
+        },
+        kernelOptions: {
+            kernelName: "pyvo",
+            path: "./content/Optik/Notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'pyvo'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../Optik_Preaambel.html" title="previous page">Themengebiet Optik</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Felix Erichson / Lynn Reuss / Richard Börner<br/>
+        
+            &copy; Copyright 2022 / CC BY-NC-SA.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

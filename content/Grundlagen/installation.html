@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Installation &#8212; Python in der Vorlesung</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -31,25 +31,23 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/icon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -57,10 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Jupyter Notebooks" href="notebook_grundlagen.html" />
     <link rel="prev" title="" href="../../index_page.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
+    <meta name="docsearch:language" content="en" />
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -77,10 +72,6 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
       <img src="../../_static/PyVo_Logo.png" class="logo" alt="logo">
       
       
@@ -90,7 +81,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -99,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Grundlagen
  </span>
@@ -121,7 +112,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Aufgaben
  </span>
@@ -162,6 +153,21 @@ const thebe_selector_output = ".output, .cell_output"
      Schiefe Ebene
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Mechanik/Notebooks/gekoppelte_Fahrzeuge.html">
+     Gekoppelte Fahrzeuge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Mechanik/Notebooks/Sto%C3%9Fpendel.html">
+     Das Stoßpendel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Mechanik/Notebooks/Stahlband.html">
+     Das Stahlband
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -177,6 +183,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../Optik/Optik_Preaambel.html">
    Themengebiet Optik
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Optik/Notebooks/Schuetzenfisch.html">
+   Schützenfisch Aufgabe
   </a>
  </li>
 </ul>
@@ -225,7 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -256,12 +267,12 @@ const thebe_selector_output = ".output, .cell_output"
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#anaconda">
@@ -288,45 +299,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Installation</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#anaconda">
-   Anaconda
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pyvo-projekt-herunterladen">
-     PyVo Projekt herunterladen
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#erstellen-des-pyvo-environment">
-     Erstellen des PyVo Environment
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
+        
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="installation">
+  <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <p>Für die Verwendung der PyVo Notebooks aus der Vorlesung bzw. dem Seminar muss der Packetmanager <strong>Anaconda</strong> installiert
 werden. Dieser sorgt dafür, dass alle benötigten Bibliotheken einfach in einem definiertem Ecosystem installiert werden.</p>
@@ -351,12 +327,27 @@ werden. Dieser sorgt dafür, dass alle benötigten Bibliotheken einfach in einem
 <p>Für die Vorlesung werden wir ein Environment erstellen, in dem die Aufgaben bearbeitet werden können. Dort werden alle Pakete installiert, die wir verwenden werden.
 Das Erstellen des PyVo Environments ist auf verschiedene Arten möglich:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="b855a40e-7554-4d05-b2bb-9716fec2f93e" name="528519fe-f853-457e-8684-0b0b35a9bb69" type="radio">
-</input><label class="tabbed-label" for="b855a40e-7554-4d05-b2bb-9716fec2f93e">
+<input checked="checked" id="63f23fb1-8d55-49fe-a5ad-e9686ceb86dc" name="f9000a9a-681a-43a2-a15d-371797265853" type="radio">
+</input><label class="tabbed-label" for="63f23fb1-8d55-49fe-a5ad-e9686ceb86dc">
 Windows (Anaconda Navigator)</label><div class="tabbed-content docutils">
+<p>Vorbereitung: Um die Installation des Environments durch den Import der <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> Datei zu ermöglichen, muss
+der libmamba-solver installiert werden. Öffnen Sie dafür den Anaconda Prompt über die Suchleiste.<br>
+<img alt="5" src="../../_images/win-anaconda-prompt1.png" />
+<br/><br/><br/></p>
+<p>Führen Sie nun nacheinander die folgenden Befehle aus:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda update -n base conda
+
+conda install -n base conda-libmamba-solver
+
+conda config --set solver libmamba
+</pre></div>
+</div>
+<p>Hat die Vorbereitung funktioniert, können Sie nun die Installation des Environments starten. Befolgenden Sie dafür die
+Schritt für Schritt Anleitung:
+<br/><br/><br/></p>
 <ol class="simple">
-<li><p>Öffnen Sie den Anaconda Navigator über die Suchleiste. Falls dieser nicht automatisch intalliert wurde, intallieren
-Sie diesen zusätlich.
+<li><p>Öffnen Sie den Anaconda Navigator über die Suchleiste. Falls dieser nicht automatisch installiert wurde, installieren
+Sie diesen zusätzlich.
 <br/><br/><br/></p></li>
 <li><p>Navigieren Sie zu den Environments.
 <img alt="1" src="../../_images/click_environment.png" />
@@ -367,8 +358,7 @@ Sie diesen zusätlich.
 <li><p>Klicken Sie auf <strong>1</strong> und wählen Sie die Datei <strong>environment.yml</strong> aus dem heruntergeladenen PyVo Ordner aus. Mit dem Klick auf <strong>2</strong> wird das Environment angelegt.
 <img alt="3" src="../../_images/import_yml_2.png" />
 <br/><br/><br/></p></li>
-<li><p>Um nun die Installierten Pakete auch im Jupyter Lab verwenden zu können, öffnen Sie Anaconda Prompt über die Suchleiste.<br>
-<img alt="5" src="../../_images/win-anaconda-prompt1.png" />
+<li><p>Um nun die Installierten Pakete auch im Jupyter Lab verwenden zu können, öffnen Sie erneut den Anaconda Prompt über die Suchleiste.
 <br/><br/><br/></p></li>
 <li><p>Kopieren Sie anschließend die folgenden Befehle und führen Sie diese mit Enter aus.</p></li>
 </ol>
@@ -381,11 +371,21 @@ python -m ipykernel install --user --name<span class="o">=</span>PyVo
 Im Anschluss können Sie JupyterLab unter <strong>3</strong> öffnen. Dabei öffnet sich Ihr Browser.
 <img alt="4" src="../../_images/activate_env.png" /></p>
 </div>
-<input id="6e52d876-4b71-4032-8052-8dd948a4455e" name="528519fe-f853-457e-8684-0b0b35a9bb69" type="radio">
-</input><label class="tabbed-label" for="6e52d876-4b71-4032-8052-8dd948a4455e">
+<input id="e686e18a-6ff1-4f59-b269-e0cf8b2505af" name="f9000a9a-681a-43a2-a15d-371797265853" type="radio">
+</input><label class="tabbed-label" for="e686e18a-6ff1-4f59-b269-e0cf8b2505af">
 Windows (Anaconda Prompt)</label><div class="tabbed-content docutils">
-<p>Öffnen das Anaconda Prompt über die Suchleiste, navigieren Sie zum PyVo Ordner und führen Sie folgenden Befehl aus:<br>
+<p>Öffnen Sie das Anaconda Prompt über die Suchleiste und navigieren Sie zum PyVo Ordner<br>
 Hinweis: Sie können die Ordner wechseln mit dem Befehl <strong>cd</strong>. Beispiel: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">\User\Name\Desktop\PyVo</span></code></p>
+<p>Um eine reibungslose und schnelle Installation zu ermöglichen, wird zuerst der libmamba-solver installiert. Dafür führen Sie
+nacheinander die folgenden Befehle aus:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda update -n base conda
+
+conda install -n base conda-libmamba-solver
+
+conda config --set solver libmamba
+</pre></div>
+</div>
+<p>Danach kann das PyVo Environment mit folgendem Befehl erstellt werden.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create -f environment.yml
 </pre></div>
 </div>
@@ -396,11 +396,21 @@ python -m ipykernel install --user --name<span class="o">=</span>PyVo
 </div>
 <p>Tippen Sie nun den Befehl <code class="docutils literal notranslate"><span class="pre">jupyter-lab</span></code> in das Terminal um Jupyter-Lab zu öffnen.</p>
 </div>
-<input id="e5d2dbe6-363f-4e27-81c0-a3cbeaabd5d1" name="528519fe-f853-457e-8684-0b0b35a9bb69" type="radio">
-</input><label class="tabbed-label" for="e5d2dbe6-363f-4e27-81c0-a3cbeaabd5d1">
+<input id="cd8969a5-81d8-4249-b767-c309fcfad129" name="f9000a9a-681a-43a2-a15d-371797265853" type="radio">
+</input><label class="tabbed-label" for="cd8969a5-81d8-4249-b767-c309fcfad129">
 Linux / Mac</label><div class="tabbed-content docutils">
-<p>Öffnen Sie das Terminal und navigieren Sie zum PyVo Ordner und führen Sie folgenden Befehl aus:<br>
+<p>Öffnen Sie das Terminal und navigieren Sie zum PyVo Ordner.<br>
 Hinweis: Sie können die Ordner wechseln mit dem Befehl <strong>cd</strong>. Beispiel: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">\User\Name\Desktop\PyVo</span></code></p>
+<p>Um eine reibungslose und schnelle Installation zu ermöglichen, wird zuerst der libmamba-solver installiert. Dafür führen Sie
+nacheinander die folgenden Befehle aus:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda update -n base conda
+
+conda install -n base conda-libmamba-solver
+
+conda config --set solver libmamba
+</pre></div>
+</div>
+<p>Danach kann das PyVo Environment mit folgendem Befehl erstellt werden:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create -f environment.yml
 </pre></div>
 </div>
@@ -430,7 +440,7 @@ python -m ipykernel install --user --name<span class="o">=</span>PyVo
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content\Grundlagen"
+            path: "./content/Grundlagen"
         },
         predefinedOutput: true
     }
@@ -439,42 +449,34 @@ python -m ipykernel install --user --name<span class="o">=</span>PyVo
 
               </div>
               
+        
+        <div class='prev-next-bottom'>
             
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../../index_page.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"></p>
+    <a class='left-prev' id="prev-link" href="../../index_page.html" title="previous page"></a>
+    <a class='right-next' id="next-link" href="notebook_grundlagen.html" title="next page">Jupyter Notebooks</a>
+
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="notebook_grundlagen.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Jupyter Notebooks</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            
+        
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      By Felix Erichson / Lynn Reuss / Richard Börner<br/>
-    
-        &copy; Copyright 2022 / CC BY-NC-SA.<br/>
-  </p>
-</footer>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Felix Erichson / Lynn Reuss / Richard Börner<br/>
+        
+            &copy; Copyright 2022 / CC BY-NC-SA.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
+  
   </body>
 </html>

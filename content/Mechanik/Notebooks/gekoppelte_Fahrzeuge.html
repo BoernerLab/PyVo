@@ -1,0 +1,734 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gekoppelte Fahrzeuge &#8212; Python in der Vorlesung</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="shortcut icon" href="../../../_static/icon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Das Stoßpendel" href="Sto%C3%9Fpendel.html" />
+    <link rel="prev" title="Schiefe Ebene" href="Schiefe_Ebene.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      <img src="../../../_static/PyVo_Logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python in der Vorlesung</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../index_page.html">
+   Home
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Grundlagen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Grundlagen/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Grundlagen/notebook_grundlagen.html">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Grundlagen/bibliotheken.html">
+   Nützliche Bibliotheken
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Aufgaben
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../Mechanik_Preaambel.html">
+   Themengebiet Mechanik
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Geschwindigkeit.html">
+     Einführung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Wurfbewegung.html">
+     Wurfbewegung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ampel.html">
+     Ampel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Looping.html">
+     Looping
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Schiefe_Ebene.html">
+     Schiefe Ebene
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Gekoppelte Fahrzeuge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sto%C3%9Fpendel.html">
+     Das Stoßpendel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Stahlband.html">
+     Das Stahlband
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Schwingung_Wellen/Schwingung_Preaambel.html">
+   Themengebiet mechanische Schwingungen und Wellen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../W%C3%A4rmelehre/W%C3%A4rmelehre_Preaambel.html">
+   Themengebiet Wärmelehre
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Optik/Optik_Preaambel.html">
+   Themengebiet Optik
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Optik/Notebooks/Schuetzenfisch.html">
+   Schützenfisch Aufgabe
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/Mechanik/Notebooks/gekoppelte_Fahrzeuge.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BoernerLab/PyVo"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BoernerLab/PyVo/main?urlpath=tree/docs/content/Mechanik/Notebooks/gekoppelte_Fahrzeuge.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabenstellung">
+   Aufgabenstellung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gegeben">
+   Gegeben
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gesucht">
+   Gesucht
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skizze">
+   Skizze
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#physikalischer-losungsweg">
+   Physikalischer Lösungsweg
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementierung-in-python">
+   Implementierung in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphische-darstellung-unter-variation-der-anfangsbedingung">
+   Graphische Darstellung unter Variation der Anfangsbedingung
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="gekoppelte-fahrzeuge">
+<h1>Gekoppelte Fahrzeuge<a class="headerlink" href="#gekoppelte-fahrzeuge" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="aufgabenstellung">
+<h2>Aufgabenstellung<a class="headerlink" href="#aufgabenstellung" title="Permalink to this headline">¶</a></h2>
+<p>Zwei aneinander gekoppelte Fahrzeuge mit den Masse <span class="math notranslate nohighlight">\(m_1\)</span> und <span class="math notranslate nohighlight">\(m_2\)</span> befinden sich in Ruhe. Zwischen beiden Fahrzeugen befindet sich eine nicht befestigte und um die Länge <span class="math notranslate nohighlight">\(x\)</span> zusammengedrückte Feder der Federkonstanten <span class="math notranslate nohighlight">\(k\)</span>. Nach Lösen der Kopplung entspannt sich die Feder.</p>
+<p>Aufgabe 1: Welche Geschwindigkeiten <span class="math notranslate nohighlight">\(v'_1\)</span> und <span class="math notranslate nohighlight">\(v'_2\)</span> besitzen danach die beiden Fahrzeuge? (für beliebige Massen)
+Man betrachte Energie und Impuls in einem System, das sich mit dem Schwerpunkt
+bewegt.</p>
+<p>Aufgabe 2:  Es sei <span class="math notranslate nohighlight">\(m_1 = m_2 = m\)</span>. Welche Konsequenz ergibt sich dadurch für die Geschwindigkeiten <span class="math notranslate nohighlight">\(v'_1\)</span> und <span class="math notranslate nohighlight">\(v'_2\)</span> und wie groß sind sie?</p>
+</div>
+<div class="section" id="gegeben">
+<h2>Gegeben<a class="headerlink" href="#gegeben" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Masse der Fahrzeuge <span class="math notranslate nohighlight">\(m_1 = m_2 = m = 500~kg\)</span></p></li>
+<li><p>Längenänderung der Feder beim Zusammendrücken <span class="math notranslate nohighlight">\(x = 0,16~m\)</span></p></li>
+<li><p>Federkonstante <span class="math notranslate nohighlight">\(k = 40~\frac{kN}{m}\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="gesucht">
+<h2>Gesucht<a class="headerlink" href="#gesucht" title="Permalink to this headline">¶</a></h2>
+<p>Geschwindigkeit in Metern pro Sekunde <span class="math notranslate nohighlight">\(v'_1\)</span>, <span class="math notranslate nohighlight">\(v'_2\)</span> [<span class="math notranslate nohighlight">\(\frac{m}{s}\)</span>]</p>
+</div>
+<div class="section" id="skizze">
+<h2>Skizze<a class="headerlink" href="#skizze" title="Permalink to this headline">¶</a></h2>
+<p><img alt="title" src="../../../_images/gekoppelteFahrzeuge_2.svg" /></p>
+</div>
+<div class="section" id="physikalischer-losungsweg">
+<h2>Physikalischer Lösungsweg<a class="headerlink" href="#physikalischer-losungsweg" title="Permalink to this headline">¶</a></h2>
+<p>benötigt: Energieerhaltungssatz EES und Impulserhaltungssatz IES<br />
+Formeln</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(v_1' = -\frac{m_2}{m_1} \cdot v_2'\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v_2' = \Delta x \sqrt{\frac{k \cdot m_1}{m_2^2 + m_1 \cdot m_2}}\)</span></p></li>
+</ul>
+<p>daraus folgt:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(v_1' = - \frac{m_2}{m_1} \cdot \Delta x \sqrt{\frac{k \cdot m_1}{m_2^2 + m_1 \cdot m_2}}\)</span></p></li>
+</ul>
+<p>Berechnung <span class="math notranslate nohighlight">\(v_1'\)</span>:<br />
+<span class="math notranslate nohighlight">\(v_1' = - 0,16~\rm m  \cdot \sqrt{\frac{40000~\rm N/m  \cdot 500 ~\rm kg }{(500 ~\rm kg )^2 + 500 ~\rm kg  \cdot 500 ~\rm kg }} = - 0,16~\rm m \cdot \sqrt{\frac{20000000 ~\rm Nkg/m}{500000 ~\rm kg^2}} = - 0,16~\rm m \cdot 2\sqrt{10~ \rm s^{-2}}  = -1,01~\frac{m}{s}\)</span></p>
+<p>daraus folgt <span class="math notranslate nohighlight">\(v_2' = 1,01~\frac{m}{s}\)</span>. Dieses Fahrzeug fährt also in die entgegengesetzte Richtung zum ersten Fahrzeug.</p>
+</div>
+<div class="section" id="implementierung-in-python">
+<h2>Implementierung in Python<a class="headerlink" href="#implementierung-in-python" title="Permalink to this headline">¶</a></h2>
+<p>Zuerst müssen einige Bibliotheken importiert werden, die für Berechnungen, Visualisierung, etc. notwendig sind.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nun werden die gegebenen Werte als Variablen definiert.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definieren der Variablen</span>
+<span class="n">m1</span> <span class="o">=</span> <span class="mi">500</span> <span class="c1"># Fahrzeuggewicht [kg]</span>
+<span class="n">m2</span> <span class="o">=</span> <span class="mi">500</span> <span class="c1"># Fahrzeuggewicht [kg]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">0.16</span> <span class="c1"># zusammengedrückte Feder [m]</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">40000</span> <span class="c1"># Federkonstante [N/m] -&gt; 40 kN/m</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Funktion zur Berechnung von v1&#39;</span>
+<span class="k">def</span> <span class="nf">berechne_v1</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">v1</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">m1</span><span class="o">/</span><span class="n">m2</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="p">((</span><span class="n">k</span> <span class="o">*</span> <span class="n">m1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">m2</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">m1</span><span class="o">*</span><span class="n">m2</span><span class="p">)))</span><span class="o">**</span><span class="mf">0.5</span>
+    <span class="k">return</span> <span class="n">v1</span>
+
+<span class="k">def</span> <span class="nf">berechne_v2</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">v2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="p">((</span><span class="n">k</span> <span class="o">*</span> <span class="n">m1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">m2</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">m1</span><span class="o">*</span><span class="n">m2</span><span class="p">)))</span><span class="o">**</span><span class="mf">0.5</span>
+    <span class="k">return</span> <span class="n">v2</span>
+
+<span class="c1"># Verwendung der Funktion</span>
+<span class="n">v1</span> <span class="o">=</span> <span class="n">berechne_v1</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">berechne_v2</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;v1&#39; beträgt </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> m/s und v2&#39; beträgt </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">v2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> m/s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>v1&#39; beträgt -1.01 m/s und v2&#39; beträgt 1.01 m/s
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="graphische-darstellung-unter-variation-der-anfangsbedingung">
+<h2>Graphische Darstellung unter Variation der Anfangsbedingung<a class="headerlink" href="#graphische-darstellung-unter-variation-der-anfangsbedingung" title="Permalink to this headline">¶</a></h2>
+<p>Nun können beispielsweise die Geschwindigkeiten für verschiedene Fahrzeug-Massen errechnet werden. In einem ersten Schritt wird hierbei wieder ein Vektor mit unterschiedlichen Massewerten erstellt und anschließend <span class="math notranslate nohighlight">\(v_1\)</span>’ und <span class="math notranslate nohighlight">\(v_2\)</span>’ für jeden Wert berechnet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erstellen eines Vektors</span>
+<span class="n">m_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+
+<span class="c1"># Initialisierung einer Liste für die berechneten Werte</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">m_i</span> <span class="ow">in</span> <span class="n">m_vector</span><span class="p">:</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">40</span> <span class="c1"># Federkonstante [kN/m]</span>
+    <span class="n">v1</span> <span class="o">=</span> <span class="n">berechne_v1</span><span class="p">(</span><span class="n">m_i</span><span class="p">,</span> <span class="n">m_i</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="n">v2</span> <span class="o">=</span> <span class="n">berechne_v2</span><span class="p">(</span><span class="n">m_i</span><span class="p">,</span> <span class="n">m_i</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">m_i</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">])</span>
+
+<span class="n">values_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Masse in kg&#39;</span><span class="p">,</span> <span class="s1">&#39;v1 in m/s&#39;</span><span class="p">,</span> <span class="s1">&#39;v2 in m/s&#39;</span><span class="p">])</span>
+<span class="n">values_table</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1">#.head -&gt; nur die ersten Zeilen werden angezeigt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Masse in kg</th>
+      <th>v1 in m/s</th>
+      <th>v2 in m/s</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>300</td>
+      <td>-0.041312</td>
+      <td>0.041312</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>800</td>
+      <td>-0.025298</td>
+      <td>0.025298</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1300</td>
+      <td>-0.019846</td>
+      <td>0.019846</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1800</td>
+      <td>-0.016865</td>
+      <td>0.016865</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2300</td>
+      <td>-0.014920</td>
+      <td>0.014920</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definieren der Größe und des Aussehens des Plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">values_table</span><span class="p">[</span><span class="s1">&#39;Masse in kg&#39;</span><span class="p">],</span> <span class="n">values_table</span><span class="p">[</span><span class="s1">&#39;v2 in m/s&#39;</span><span class="p">],</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#2b8cbe&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">values_table</span><span class="p">[</span><span class="s1">&#39;Masse in kg&#39;</span><span class="p">],</span> <span class="n">values_table</span><span class="p">[</span><span class="s1">&#39;v1 in m/s&#39;</span><span class="p">],</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#fd8d3c&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">berechne_v2</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">k</span><span class="p">),</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#2b8cbe&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">berechne_v1</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">k</span><span class="p">),</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#fd8d3c&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Masse $\mathit</span><span class="si">{m}</span><span class="s2">$ in kg&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">xmin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Geschwindigkeit $\mathit</span><span class="si">{v}</span><span class="s2">$ in m/s&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;$v_1$&#39;</span><span class="p">,</span> <span class="s1">&#39;$v_2$&#39;</span><span class="p">],</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">handlelength</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/gekoppelte_Fahrzeuge_9_0.png" src="../../../_images/gekoppelte_Fahrzeuge_9_0.png" />
+</div>
+</div>
+<p>Nun können wir natürlich auch davon ausgehen, dass die zwei Fahrzeuge unterschiedliche Massen besitzen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vektoren für unterschiedliche Massen der Fahrzeuge</span>
+<span class="n">m1_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">900</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">m2_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Initialisierung einer Liste für die berechneten Werte</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+<span class="c1"># Berechnung von Kraft und Querkontraktion</span>
+<span class="k">for</span> <span class="n">m1_i</span><span class="p">,</span> <span class="n">m2_i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">m1_vector</span><span class="p">,</span> <span class="n">m2_vector</span><span class="p">):</span>
+    <span class="n">v1</span> <span class="o">=</span> <span class="n">berechne_v1</span><span class="p">(</span><span class="n">m1_i</span><span class="p">,</span> <span class="n">m2_i</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="n">v2</span> <span class="o">=</span> <span class="n">berechne_v2</span><span class="p">(</span><span class="n">m1_i</span><span class="p">,</span> <span class="n">m2_i</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="n">m_ges</span> <span class="o">=</span> <span class="n">m1_i</span> <span class="o">+</span> <span class="n">m2_i</span>
+    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">m1_i</span><span class="p">,</span> <span class="n">m2_i</span><span class="p">,</span> <span class="n">m_ges</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">])</span>
+
+<span class="n">values_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;m1 in kg&#39;</span><span class="p">,</span> <span class="s1">&#39;m2 in kg&#39;</span><span class="p">,</span> <span class="s1">&#39;m gesamt in kg&#39;</span><span class="p">,</span> <span class="s1">&#39;v1 in m/s&#39;</span><span class="p">,</span> <span class="s1">&#39;v2 in m/s&#39;</span><span class="p">])</span>
+<span class="n">values_table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>m1 in kg</th>
+      <th>m2 in kg</th>
+      <th>m gesamt in kg</th>
+      <th>v1 in m/s</th>
+      <th>v2 in m/s</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>300</td>
+      <td>50</td>
+      <td>350</td>
+      <td>-0.794956</td>
+      <td>0.132493</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>400</td>
+      <td>100</td>
+      <td>500</td>
+      <td>-0.362039</td>
+      <td>0.090510</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>500</td>
+      <td>150</td>
+      <td>650</td>
+      <td>-0.241552</td>
+      <td>0.072466</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>600</td>
+      <td>200</td>
+      <td>800</td>
+      <td>-0.185903</td>
+      <td>0.061968</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>700</td>
+      <td>250</td>
+      <td>950</td>
+      <td>-0.153824</td>
+      <td>0.054937</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>800</td>
+      <td>300</td>
+      <td>1100</td>
+      <td>-0.132864</td>
+      <td>0.049824</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Für die Visualisierung werden nun die verschiedenen Messungen anhand von m1 gruppiert</span>
+<span class="n">groups</span> <span class="o">=</span> <span class="n">values_table</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;m gesamt in kg&quot;</span><span class="p">)</span> 
+
+<span class="c1"># Definition einer Farbpalette </span>
+<span class="n">col_pal</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;winter&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">m1_vector</span><span class="p">))</span>
+
+<span class="c1"># Initialisieren einer Zählvariable</span>
+<span class="n">i</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="c1"># Definieren der Größe und des Aussehens des Plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="c1"># Iteration der a0 Gruppen und anschließende Visualsierung der Zeitverläufe</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s1">&#39;m gesamt in kg&#39;</span><span class="p">],</span> <span class="n">group</span><span class="p">[</span><span class="s1">&#39;v2 in m/s&#39;</span><span class="p">],</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">col_pal</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;m gesamt = </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> kg&quot;</span><span class="p">)</span> <span class="c1">#, $m2 = ${group[&#39;m2&#39;, i]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s1">&#39;m gesamt in kg&#39;</span><span class="p">],</span> <span class="n">group</span><span class="p">[</span><span class="s1">&#39;v1 in m/s&#39;</span><span class="p">],</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">col_pal</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c1">#label = f&quot;$m1 = ${name} &quot;</span>
+
+
+<span class="c1">#plt.plot(values_table[&#39;m gesamt&#39;], values_table[&#39;v2&#39;], &#39;x&#39;, color=&#39;#2b8cbe&#39;)</span>
+<span class="c1">#plt.plot(values_table[&#39;m gesamt&#39;], values_table[&#39;v1&#39;], &#39;x&#39;, color=&#39;#fd8d3c&#39;)</span>
+<span class="c1"># plt.plot(values_table[&#39;m gesamt&#39;], values_table[&#39;v2&#39;], &#39;-&#39;, color=&#39;#2b8cbe&#39;)</span>
+<span class="c1"># plt.plot(values_table[&#39;m gesamt&#39;], values_table[&#39;v1&#39;], &#39;-&#39;, color=&#39;#fd8d3c&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Masse $\mathit</span><span class="si">{m}</span><span class="s2">$ in kg&quot;</span><span class="p">)</span>
+<span class="c1">#plt.xlim(xmin = 300)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Geschwindigkeit $\mathit</span><span class="si">{v}</span><span class="s2">$ in m/s&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper center&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">),</span><span class="n">fancybox</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">m1_vector</span><span class="p">))</span>
+
+
+<span class="c1">#plt.legend([&#39;$v_1$&#39;, &#39;$v_2$&#39;], frameon=False, handlelength=0.75, fontsize=&#39;small&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/gekoppelte_Fahrzeuge_12_0.png" src="../../../_images/gekoppelte_Fahrzeuge_12_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/Mechanik/Notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Schiefe_Ebene.html" title="previous page">Schiefe Ebene</a>
+    <a class='right-next' id="next-link" href="Sto%C3%9Fpendel.html" title="next page">Das Stoßpendel</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Felix Erichson / Lynn Reuss / Richard Börner<br/>
+        
+            &copy; Copyright 2022 / CC BY-NC-SA.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
